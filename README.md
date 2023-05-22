@@ -1,2 +1,2 @@
 # About this Project
- tic tac toe text based game
+  tic tac toe text based game
