@@ -14,6 +14,7 @@ class TicTacToe :
         return upperCase
 
     # creating board
+    # 3 * 3 board
     def making_board(self):
         pass
 
