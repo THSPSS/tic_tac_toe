@@ -15,6 +15,13 @@ class TestTicTacToe(unittest.TestCase):
         self.assertEqual(ttt.makingUpperCase("o"),'O')
 
 
+    # def test_making_board_checking_number(self):
+    #     self.assertEqual(ttt.makingBoard(3),'3')
+
+    def test_making_board_checking_board_list(self):
+        self.assertEqual(ttt.makingBoard(3), [[" "," "," "],[" "," "," "],[" "," "," "]])
+
+
 
 
 
