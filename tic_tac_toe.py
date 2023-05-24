@@ -25,6 +25,17 @@ class TicTacToe :
 
         return board_list
 
+    def player_input(self,playerInput):
+        place = playerInput
+        column = place[0]
+        row = place[1]
+        #value = list[column][row]
+
+        return "column is {}, row is {}".format(column , row)
+
+
+
+
 
 
 

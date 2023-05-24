@@ -22,6 +22,10 @@ class TestTicTacToe(unittest.TestCase):
         self.assertEqual(ttt.makingBoard(3), [[" "," "," "],[" "," "," "],[" "," "," "]])
 
 
+    def test_player_input(self):
+        self.assertEqual(ttt.player_input(self,"11"), "column is 1, row is 1")
+
+
 
 
 
