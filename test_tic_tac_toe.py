@@ -23,7 +23,11 @@ class TestTicTacToe(unittest.TestCase):
 
 
     def test_player_input(self):
-        self.assertEqual(ttt.player_input(self,"11"), "column is 1, row is 1")
+        self.assertEqual(ttt.player_input(self,"O11"), "player O column is 1, row is 1")
+
+    def test_inserting_board(self):
+        self.assertEqual(ttt.inserting_board(board_list=[[" "," "," "],[" "," "," "],[" "," "," "]], player_side="O" , column=1, row=2),
+                         [[" "," "," "],[" "," "," "],[" ","O"," "]])
 
 
 

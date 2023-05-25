@@ -27,11 +27,19 @@ class TicTacToe :
 
     def player_input(self,playerInput):
         place = playerInput
-        column = place[0]
-        row = place[1]
+        player_side = place[0]
+        column = place[1]
+        row = place[2]
         #value = list[column][row]
 
-        return "column is {}, row is {}".format(column , row)
+        return "player {} column is {}, row is {}".format(player_side ,column , row)
+
+
+    def inserting_board( board_list , player_side ,column , row):
+        board_list[row][column] = player_side
+
+        return board_list
+
 
 
 
