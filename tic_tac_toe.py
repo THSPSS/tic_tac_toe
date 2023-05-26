@@ -15,15 +15,25 @@ class TicTacToe :
 
     # creating board
     # 3 * 3 board
-    def makingBoard(board_num):
+    def makingANewBoard(board_num):
         board_list = []
         for i in range(0 ,board_num):
             inserted_list = []
             for j in range(0, board_num) :
-                 inserted_list.append(" ")
+                 inserted_list.append("-")
             board_list.append(inserted_list)
 
         return board_list
+
+    def checkingIfBoardFilled(board):
+        for list in board :
+            for element in list :
+                #if board has something other than - mark
+                if element != "-" :
+                    #return False which is board is not empty
+                    return False
+        #otherwise , return True which indicate that board is empty
+        return True
 
     def player_input(self,playerInput):
         place = playerInput
