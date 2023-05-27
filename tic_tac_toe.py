@@ -4,8 +4,8 @@
 
 class TicTacToe :
 
-    def __init__(self):
-        self.message = "Please select Player 1's position. X or O ?"
+    # def __init__(self):
+    #     self.message = "Please select Player 1's position. X or O ?"
 
     # create tic tac toe game
     # get user's position
@@ -15,7 +15,7 @@ class TicTacToe :
 
     # creating board
     # 3 * 3 board
-    def makingANewBoard(board_num):
+    def makingANewBoard(self,board_num):
         board_list = []
         for i in range(0 ,board_num):
             inserted_list = []
