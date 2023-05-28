@@ -9,7 +9,7 @@ class TicTacToe :
 
     # create tic tac toe game
     # get user's position
-    def makingUpperCase(userInput):
+    def makingUpperCase(self , userInput):
         upperCase = userInput.upper()
         return upperCase
 
