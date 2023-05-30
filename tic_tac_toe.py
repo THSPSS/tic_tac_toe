@@ -25,7 +25,7 @@ class TicTacToe :
 
         return board_list
 
-    def checkingIfBoardFilled(board):
+    def checkingIfBoardFilled(self , board):
         for list in board :
             for element in list :
                 #if board has something other than - mark
