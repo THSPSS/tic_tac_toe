@@ -35,14 +35,29 @@ class TicTacToe :
         #otherwise , return True which indicate that board is empty
         return True
 
-    def player_input(self,playerInput):
-        place = playerInput
+    def player_input(self,playerInputs):
+        place = playerInputs
         player_side = place[0]
         column = place[1]
         row = place[2]
         #value = list[column][row]
 
-        return "player {} column is {}, row is {}".format(player_side ,column , row)
+        #return "player {} column is {}, row is {}".format(player_side ,column , row)
+        return { "plyer_side" : player_side , "column" : column , "row" : row}
+
+    def isInputBoardEmpty(self , playerInput , board):
+        #playerInputDict = self.player_input(playerInputs=playerInput)
+        playerInputDict = playerInput
+
+        print(playerInputDict)
+
+
+        if not board[playerInputDict['row']][playerInputDict['column']] :
+            return True
+        #board[playerInputDict['row']][playerInputDict['column']] = playerInputDict["player_side"]
+
+
+        return False
 
 
     def inserting_board( board_list , player_side ,column , row):
