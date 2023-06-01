@@ -17,10 +17,10 @@ if isBoardEmpty :
 user_input = input("Please enter your position. O or X ? ")
 
 
-Player_one = tictactoe.makingUpperCase(userInput=user_input)
+player_one = tictactoe.makingUpperCase(userInput=user_input)
 
 
-print(Player_one)
+print(player_one)
 
 
 

@@ -18,6 +18,13 @@ class TestTicTacToe(unittest.TestCase):
     # def test_making_board_checking_number(self):
     #     self.assertEqual(ttt.makingBoard(3),'3')
 
+    def test_set_other_player_when_O(self):
+        self.assertEqual(ttt.setOtherPlayer(self,"O"),"X")
+
+    def test_set_other_player_when_X(self):
+        self.assertEqual(ttt.setOtherPlayer(self,"X"),"O")
+
+
     def test_making_board_checking_board_list(self):
         self.assertEqual(ttt.makingANewBoard(self,board_num=3), [["-","-","-"],["-","-","-"],["-","-","-"]])
 

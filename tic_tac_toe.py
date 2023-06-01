@@ -13,6 +13,12 @@ class TicTacToe :
         upperCase = userInput.upper()
         return upperCase
 
+    def setOtherPlayer(self, first_player_input):
+        if first_player_input == "O":
+            return "X"
+        else:
+            return "O"
+
     # creating board
     # 3 * 3 board
     def makingANewBoard(self,board_num):
