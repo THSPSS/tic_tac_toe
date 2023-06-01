@@ -35,6 +35,14 @@ class TicTacToe :
         #otherwise , return True which indicate that board is empty
         return True
 
+    def checking_user_input(self , playerInputs):
+        print(len(playerInputs))
+        if len(playerInputs) != 3 :
+            return False
+        #and playerInputs[0] == "o" or "x" and int(playerInputs[1]) <= 9 and int(playerInputs[2]) <= 9:
+        return True
+
+
     def player_input(self,playerInputs):
         place = playerInputs
         player_side = place[0]
