@@ -25,7 +25,7 @@ class TestTicTacToe(unittest.TestCase):
         self.assertEqual(ttt.setOtherPlayer(self,"X"),"O")
 
 
-    def test_making_board_checking_board_list(self):
+    def test_making_board(self):
         self.assertEqual(ttt.makingANewBoard(self,board_num=3), [["-","-","-"],["-","-","-"],["-","-","-"]])
 
 
