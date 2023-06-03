@@ -22,12 +22,13 @@ class TicTacToe :
     # creating board
     # 3 * 3 board
     def makingANewBoard(self,board_num):
-        board_list = []
-        for i in range(0 ,board_num):
-            inserted_list = []
-            for j in range(0, board_num) :
-                 inserted_list.append("-")
-            board_list.append(inserted_list)
+        row , col = board_num , board_num
+        board_list = [["-"]*col]*row
+        # for i in range(0 ,board_num):
+        #     inserted_list = []
+        #     for j in range(0, board_num) :
+        #          inserted_list.append("-")
+        #     board_list.append(inserted_list)
 
         return board_list
 
