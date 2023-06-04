@@ -29,17 +29,21 @@ class TestTicTacToe(unittest.TestCase):
         self.assertEqual(ttt.makingANewBoard(self,board_num=3), [["-","-","-"],["-","-","-"],["-","-","-"]])
 
 
-    def test_checking_user_input_length(self):
-        self.assertFalse(ttt.checking_user_input(self,"o1"))
+    # def test_checking_user_input_length(self):
+    #     self.assertFalse(ttt.checking_user_input(self,"o1"))
 
 
     def test_player_input(self):
-        self.assertEqual(ttt.player_input(self,"O11"), { "plyer_side" : "O" , "column" : "1" , "row" : "1"})
+        self.assertEqual(ttt.player_input(self,"11"), ("1","1"))
 
 
     def test_inserting_board(self):
-        self.assertEqual(ttt.inserting_board(board_list=[["-","-","-"],["-","-","-"],["-","-","-"]], player_side="O" , column=1, row=2),
-                         [["-","-","-"],["-","-","-"],["-","O","-"]])
+        self.assertEqual(ttt.inserting_board(self ,
+                                             board_list=[["-","-","-"],["-","-","-"],["-","-","-"]],
+                                             player_side="O" ,
+                                             row=2 ,
+                                             column=0),
+                         [["-","-","-"],["-","-","-"],["O","-","-"]])
 
     def test_checking_if_board_is_empty(self):
         self.assertTrue(ttt.checkingIfBoardFilled(self ,[["-","-","-"],["-","-","-"],["-","-","-"]]))

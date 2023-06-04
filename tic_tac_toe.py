@@ -44,7 +44,7 @@ class TicTacToe :
 
     def checking_user_input(self , playerInputs):
         print(len(playerInputs))
-        if len(playerInputs) != 3 :
+        if len(playerInputs) != 2 :
             return False
         #and playerInputs[0] == "o" or "x" and int(playerInputs[1]) <= 9 and int(playerInputs[2]) <= 9:
         return True
@@ -52,13 +52,12 @@ class TicTacToe :
 
     def player_input(self,playerInputs):
         place = playerInputs
-        player_side = place[0]
+        row = place[0]
         column = place[1]
-        row = place[2]
         #value = list[column][row]
 
         #return "player {} column is {}, row is {}".format(player_side ,column , row)
-        return { "plyer_side" : player_side , "column" : column , "row" : row}
+        return row , column
 
     def isInputBoardEmpty(self , playerInput , board):
         #playerInputDict = self.player_input(playerInputs=playerInput)
@@ -75,7 +74,9 @@ class TicTacToe :
         return False
 
 
-    def inserting_board( board_list , player_side ,column , row):
+    def inserting_board( self , board_list , player_side , row , column):
+        print("this is the board",board_list)
+        print(f"user inset on this place boardlist[{row}][{column}]")
         board_list[row][column] = player_side
 
         return board_list
