@@ -22,7 +22,7 @@ player_two = tictactoe.setOtherPlayer(first_player_input=player_one)
 
 print(player_one)
 
-play_times = 0
+play_times = 1
 
 while board_game_is_on:
 
@@ -44,7 +44,10 @@ while board_game_is_on:
 
     #player_input = tictactoe.player_input(playerInput=player_input)
 
-    #board = tictactoe.inserting_board(board_list=board, player_side=player_side , row=int(player_input[0]) , column=int(player_input[1]) )
+    board_list = tictactoe.inserting_board(board_list=board, player_side=player_side , row=int(player_input[0]) , column=int(player_input[1]) )
 
+    print(board_list)
+
+    play_times += 1
 
 

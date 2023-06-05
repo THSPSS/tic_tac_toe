@@ -75,11 +75,13 @@ class TicTacToe :
 
 
     def inserting_board( self , board_list , player_side , row , column):
+        updated_board = [row[:] for row in board_list]
+        print(f"this is plyar side : {player_side}")
         print("this is the board",board_list)
         print(f"user inset on this place boardlist[{row}][{column}]")
-        board_list[row][column] = player_side
+        updated_board[row][column] = player_side
 
-        return board_list
+        return updated_board
 
 
 
