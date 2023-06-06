@@ -32,13 +32,10 @@ class TicTacToe :
 
         return board_list
 
-    def checkingIfBoardFilled(self , board):
-        for list in board :
-            for element in list :
-                #if board has something other than - mark
-                if element != "-" :
-                    #return False which is board is not empty
-                    return False
+    def checkingIfBoardFilled(self , board , row , column):
+        if board[row][column] != "-" :
+            #return False which is board is not empty
+            return False
         #otherwise , return True which indicate that board is empty
         return True
 
