@@ -7,24 +7,34 @@ tictactoe = TicTacToe()
 #setting game
 board_game_is_on = False
 player_one = None
+
 #after making board board_game_is_on set True
 board_game_is_on = True
-user_input_validate = False
+
+
+#Initialize input_not_validated variable
+input_not_validated = True
 
 
 #making board
 board = tictactoe.makingANewBoard(board_num=3)
-#get user input
+
+
+# Get user input
 user_input = input("Please enter first player's position. O or X ? : ")
 
 
+# While loop for validating user input
+while input_not_validated :
 
-#making while loop validating user input
-while not user_input_validate :
-    player_one = tictactoe.makingUpperCase(user_input=user_input)
+    # Validate player_one input
+    validate_result = tictactoe.validateInput(player_one_input=user_input)
 
-#validate player_one input
-    user_input_validate = tictactoe.validateInput(player_one_input=player_one)
+    if validate_result is not None and not validate_result:
+        print("Invalidate input.\n")
+        user_input = input("Please enter first player's position. O or X ? : ")
+    else:
+        input_not_validated = False
 #what if user put false input such as 1 or ohter gibbelish word?
 
 

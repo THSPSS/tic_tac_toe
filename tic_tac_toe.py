@@ -11,10 +11,6 @@ it has functions that related to convey TicTacToe game
 class TicTacToe:
 
 
-    #UpperCase user input
-    def makingUpperCase(self, user_input):
-        upper_case = user_input.upper()
-        return upper_case
 
     def setOtherPlayer(self, first_player_input):
         if first_player_input == "O":
@@ -44,6 +40,8 @@ class TicTacToe:
         return True
 
     def validateInput(self, player_one_input):
+        player_one_input = player_one_input.upper()
+
         if player_one_input not in ["O", "X"]:
             return False
 
