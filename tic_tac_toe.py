@@ -1,17 +1,20 @@
-#making class that creating tic_tac_toe
+"""
+
+This class is for creating TicTacToe game
+
+it has functions that related to convey TicTacToe game
 
 
+"""
 
-class TicTacToe :
 
-    # def __init__(self):
-    #     self.message = "Please select Player 1's position. X or O ?"
+class TicTacToe:
 
-    # create tic tac toe game
-    # get user's position
-    def makingUpperCase(self , userInput):
-        upperCase = userInput.upper()
-        return upperCase
+
+    #UpperCase user input
+    def makingUpperCase(self, user_input):
+        upper_case = user_input.upper()
+        return upper_case
 
     def setOtherPlayer(self, first_player_input):
         if first_player_input == "O":
@@ -21,71 +24,57 @@ class TicTacToe :
 
     # creating board
     # 3 * 3 board
-    def makingANewBoard(self,board_num):
-        row , col = board_num , board_num
-        board_list = [["-"]*col]*row
-        # for i in range(0 ,board_num):
-        #     inserted_list = []
-        #     for j in range(0, board_num) :
-        #          inserted_list.append("-")
-        #     board_list.append(inserted_list)
+    def makingANewBoard(self, board_num):
+        row, col = board_num, board_num
+        board_list = [["-"] * col] * row
 
         return board_list
 
-    def checkingIfBoardFilled(self , board , row , column):
-        if board[row][column] != "-" :
-            #return False which is board is not empty
+    def checkWholeBoard(self, board, row, column):
+        if board[row][column] != "-":
+            # return False which is board is not empty
             return False
-        #otherwise , return True which indicate that board is empty
+        # otherwise , return True which indicate that board is empty
         return True
 
-    def checking_user_input(self , playerInputs):
-        print(len(playerInputs))
-        if len(playerInputs) != 2 :
+    def validateUserInput(self, player_input):
+        if len(player_input) != 2:
             return False
-        #and playerInputs[0] == "o" or "x" and int(playerInputs[1]) <= 9 and int(playerInputs[2]) <= 9:
+        # and playerInputs[0] == "o" or "x" and int(playerInputs[1]) <= 9 and int(playerInputs[2]) <= 9:
         return True
 
+    def validateInput(self, player_one_input):
+        if player_one_input not in ["O", "X"]:
+            return False
 
-    def player_input(self,playerInputs):
-        place = playerInputs
+        return True
+
+    def playerInput(self, player_inputs):
+        place = player_inputs
         row = place[0]
         column = place[1]
-        #value = list[column][row]
+        # value = list[column][row]
 
-        #return "player {} column is {}, row is {}".format(player_side ,column , row)
-        return row , column
+        # return "player {} column is {}, row is {}".format(player_side ,column , row)
+        return row, column
 
-    def isInputBoardEmpty(self , playerInput , board):
-        #playerInputDict = self.player_input(playerInputs=playerInput)
-        playerInputDict = playerInput
+    def isInputBoardEmpty(self, player_input, board):
+        # player_input_dict = self.player_input(playerInputs=player_input)
+        player_input_dict = player_input
 
-        print(playerInputDict)
+        print(player_input_dict)
 
-
-        if not board[playerInputDict['row']][playerInputDict['column']] :
+        if not board[player_input_dict['row']][player_input_dict['column']]:
             return True
-        #board[playerInputDict['row']][playerInputDict['column']] = playerInputDict["player_side"]
-
+        # board[player_input_dict['row']][player_input_dict['column']] = player_input_dict["player_side"]
 
         return False
 
-
-    def inserting_board( self , board_list , player_side , row , column):
+    def insertingBoard(self, board_list, player_side, row, column):
         updated_board = [row[:] for row in board_list]
-        print(f"this is plyar side : {player_side}")
-        print("this is the board",board_list)
-        print(f"user inset on this place boardlist[{row}][{column}]")
+        print(f"this is player side : {player_side}")
+        print("this is the board", board_list)
+        print(f"user inset on this place updated_board[{row}][{column}]")
         updated_board[row][column] = player_side
 
         return updated_board
-
-
-
-
-
-
-
-
-
-

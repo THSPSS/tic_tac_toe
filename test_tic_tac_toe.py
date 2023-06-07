@@ -9,14 +9,11 @@ class TestTicTacToe(unittest.TestCase):
     #    self.assertEqual(ttt.getting_user_position())
 
     def test_makingUpperCaseX(self):
-        self.assertEqual(ttt.makingUpperCase(self, userInput="x"),'X')
+        self.assertEqual(ttt.makingUpperCase(self, user_input="x"),'X')
 
     def test_makingUpperCaseO(self):
         self.assertEqual(ttt.makingUpperCase(self,"o"),'O')
 
-
-    # def test_making_board_checking_number(self):
-    #     self.assertEqual(ttt.makingBoard(3),'3')
 
     def test_set_other_player_when_O(self):
         self.assertEqual(ttt.setOtherPlayer(self,"O"),"X")
@@ -34,11 +31,11 @@ class TestTicTacToe(unittest.TestCase):
 
 
     def test_player_input(self):
-        self.assertEqual(ttt.player_input(self,"11"), ("1","1"))
+        self.assertEqual(ttt.playerInput(self,"11"), ("1","1"))
 
 
     def test_inserting_board(self):
-        self.assertEqual(ttt.inserting_board(self ,
+        self.assertEqual(ttt.insertingBoard(self ,
                                              board_list=[["-","-","-"],["-","-","-"],["-","-","-"]],
                                              player_side="O" ,
                                              row=2 ,
@@ -46,12 +43,22 @@ class TestTicTacToe(unittest.TestCase):
                          [["-","-","-"],["-","-","-"],["O","-","-"]])
 
     def test_checking_if_board_is_empty(self):
-        self.assertTrue(ttt.checkingIfBoardFilled(self ,[["-","-","-"],["-","-","-"],["-","-","-"]],row=0, column=0))
+        self.assertTrue(ttt.checkWholeBoard(self ,[["-","-","-"],["-","-","-"],["-","-","-"]],row=0, column=0))
 
-    def test_checking_if_board_is_not_empty(self):
-        self.assertFalse(ttt.checkingIfBoardFilled(self,board=[["O","-","-"],["","-","-"],["","-","-"]],row=0,column=0))
+    def test_checking_whole_board_is_not_empty(self):
+        self.assertFalse(ttt.checkWholeBoard(self,board=[["O","-","-"],["","-","-"],["","-","-"]],row=0,column=0))
 
     def test_board_is_empty_or_not(self):
-        self.assertFalse(ttt.isInputBoardEmpty(self,playerInput={ "player_side" : "O" , "column" : 1 , "row" : 1},board=[["-","-","-"],["-","O","-"],["O","-","-"]]))
+        self.assertFalse(ttt.isInputBoardEmpty(self,player_input={ "player_side" : "O" , "column" : 1 , "row" : 1},board=[["-","-","-"],["-","O","-"],["O","-","-"]]))
 
+    def test_validateInput_empty_string(self):
+        self.assertFalse(ttt.validateInput(self,player_one_input=""))
 
+    def test_validateInput_number(self):
+        self.assertFalse(ttt.validateInput(self,player_one_input="1"))
+
+    def test_validateInput_typo(self):
+        self.assertFalse(ttt.validateInput(self,player_one_input="ㅇ"))
+
+    def test_validateInput_True(self):
+        self.assertTrue(ttt.validateInput(self,player_one_input="X"))
