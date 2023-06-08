@@ -20,8 +20,13 @@ input_not_validated = True
 board = tictactoe.makingANewBoard(board_num=3)
 
 
+#display board to users
+
+
+
 # Get user input
 user_input = input("Please enter first player's position. O or X ? : ")
+
 
 
 # While loop for validating user input
@@ -35,13 +40,13 @@ while input_not_validated :
         user_input = input("Please enter first player's position. O or X ? : ")
     else:
         input_not_validated = False
-#what if user put false input such as 1 or ohter gibbelish word?
 
 
 player_two = tictactoe.setOtherPlayer(first_player_input=player_one)
 
 print(f"first player : {player_one} \nother player: {player_two}")
 
+#couting the number to find which user playing
 turn_count = 1
 
 while board_game_is_on:
@@ -56,6 +61,7 @@ while board_game_is_on:
     #board printing
     print(board)
 
+    #change number to start with 1 not 0
     player_input = input("Please input your choice as [row][column] like 11 or 12 : ")
 
     checkUserInput = tictactoe.validateUserInput(player_input=player_input)
@@ -73,6 +79,7 @@ while board_game_is_on:
 
     board = tictactoe.insertingBoard(board_list=board, player_side=player_side , row=int(player_input[0]) , column=int(player_input[1]) )
 
+    #convert to displaying the board
     output_result = "After input Board : {}".format(board)
     print(output_result)
 

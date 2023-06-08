@@ -33,6 +33,17 @@ class TicTacToe:
         # otherwise , return True which indicate that board is empty
         return True
 
+    #display the board
+    def displayBoard(self):
+        dispaly_board = ""
+        for i in range(3):
+            dispaly_board += "---- "
+
+        print(dispaly_board)
+        return dispaly_board
+
+
+
     def validateUserInput(self, player_input):
         if len(player_input) != 2:
             return False
@@ -60,7 +71,7 @@ class TicTacToe:
         # player_input_dict = self.player_input(playerInputs=player_input)
         player_input_dict = player_input
 
-        print(player_input_dict)
+        #print(player_input_dict)
 
         if not board[player_input_dict['row']][player_input_dict['column']]:
             return True
@@ -70,9 +81,9 @@ class TicTacToe:
 
     def insertingBoard(self, board_list, player_side, row, column):
         updated_board = [row[:] for row in board_list]
-        print(f"this is player side : {player_side}")
-        print("this is the board", board_list)
-        print(f"user inset on this place updated_board[{row}][{column}]")
+        #print(f"this is player side : {player_side}")
+        #print("this is the board", board_list)
+        #print(f"user inset on this place updated_board[{row}][{column}]")
         updated_board[row][column] = player_side
 
         return updated_board

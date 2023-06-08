@@ -8,10 +8,6 @@ class TestTicTacToe(unittest.TestCase):
     #def test_gettingUserPosition(self):
     #    self.assertEqual(ttt.getting_user_position())
 
-    def test_makingUpperCaseO(self):
-        self.assertEqual(ttt.makingUpperCase(self,"o"),'O')
-
-
     def test_set_other_player_when_O(self):
         self.assertEqual(ttt.setOtherPlayer(self,"O"),"X")
 
@@ -59,3 +55,8 @@ class TestTicTacToe(unittest.TestCase):
 
     def test_validateInput_True(self):
         self.assertTrue(ttt.validateInput(self,player_one_input="X"))
+
+    #test display board
+    def test_displayBoard(self):
+        self.assertEqual(ttt.displayBoard(self),
+                         "---- ---- ---- ")
