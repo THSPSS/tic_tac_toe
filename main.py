@@ -7,6 +7,7 @@ tictactoe = TicTacToe()
 #setting game
 board_game_is_on = False
 player_one = None
+board_num = 3
 
 #after making board board_game_is_on set True
 board_game_is_on = True
@@ -17,7 +18,12 @@ input_not_validated = True
 
 
 #making board
-board = tictactoe.makingANewBoard(board_num=3)
+board = tictactoe.makingANewBoard(board_num=board_num)
+display_board = tictactoe.displayBoard(board_range=board_num)
+
+
+print(display_board)
+
 
 
 #display board to users

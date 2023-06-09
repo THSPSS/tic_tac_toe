@@ -34,12 +34,13 @@ class TicTacToe:
         return True
 
     #display the board
-    def displayBoard(self):
+    def displayBoard(self, board_range):
         dispaly_board = ""
-        for i in range(3):
-            dispaly_board += "---- "
+        for i in range(board_range):
+            for j in range(board_range) :
+                dispaly_board += "---- "
+            dispaly_board += "\n"
 
-        print(dispaly_board)
         return dispaly_board
 
 
