@@ -85,10 +85,18 @@ while board_game_is_on:
 
     board = tictactoe.insertingBoard(board_list=board, player_side=player_side , row=int(player_input[0]) , column=int(player_input[1]) )
     display_board = tictactoe.displayBoardAfterInsert(board_list=board)
-    #convert to displaying the board
-    output_result = "After input Board : {}".format(board)
-    print(output_result)
+
     print(display_board)
+    #if one player is turn count 3 than checking board
+    if turn_count >= 5:
+        tictactoe.inspectingBoard(board_list=board)
+
+
+    #check if there are bingo
+    #inspecting board
+
+
+
 
     turn_count += 1
 

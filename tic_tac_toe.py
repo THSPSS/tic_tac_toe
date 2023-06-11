@@ -48,7 +48,7 @@ class TicTacToe:
         for i in range(len(board_list)):
             for j in range(len(board_list[i])):
                 if board_list[i][j] != "-":
-                    dispaly_board += f"  {board_list[i][j]}   "
+                    dispaly_board += f" {board_list[i][j]}  "
                 else:
                     dispaly_board += "---- "
             dispaly_board += "\n"
@@ -60,7 +60,7 @@ class TicTacToe:
     def validateUserInput(self, player_input):
         if len(player_input) != 2:
             return False
-        # and playerInputs[0] == "o" or "x" and int(playerInputs[1]) <= 9 and int(playerInputs[2]) <= 9:
+
         return True
 
     def validateInput(self, player_one_input):
@@ -88,15 +88,17 @@ class TicTacToe:
 
         if not board[player_input_dict['row']][player_input_dict['column']]:
             return True
-        # board[player_input_dict['row']][player_input_dict['column']] = player_input_dict["player_side"]
-
         return False
 
     def insertingBoard(self, board_list, player_side, row, column):
         updated_board = [row[:] for row in board_list]
-        #print(f"this is player side : {player_side}")
-        #print("this is the board", board_list)
-        #print(f"user inset on this place updated_board[{row}][{column}]")
         updated_board[row][column] = player_side
 
         return updated_board
+
+    def inspectingBoard(self,board_list):
+        for i in board_list:
+            for j in i :
+                print(j)
+
+
