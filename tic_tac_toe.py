@@ -43,6 +43,18 @@ class TicTacToe:
 
         return dispaly_board
 
+    def displayBoardAfterInsert(self,  board_list):
+        dispaly_board = ""
+        for i in range(len(board_list)):
+            for j in range(len(board_list[i])):
+                if board_list[i][j] != "-":
+                    dispaly_board += f"  {board_list[i][j]}   "
+                else:
+                    dispaly_board += "---- "
+            dispaly_board += "\n"
+
+        return dispaly_board
+
 
 
     def validateUserInput(self, player_input):
@@ -57,7 +69,7 @@ class TicTacToe:
         if player_one_input not in ["O", "X"]:
             return False
 
-        return True
+        return player_one_input
 
     def playerInput(self, player_inputs):
         place = player_inputs

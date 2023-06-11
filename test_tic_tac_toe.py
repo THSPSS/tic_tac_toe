@@ -62,3 +62,7 @@ class TestTicTacToe(unittest.TestCase):
                          "---- ---- ---- \n"
                          "---- ---- ---- \n"
                          "---- ---- ---- \n")
+
+
+    def test_displayBoardAfterInsert(self):
+        self.assertEqual(ttt.displayBoardAfterInsert(self))

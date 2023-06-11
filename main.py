@@ -47,7 +47,7 @@ while input_not_validated :
     else:
         input_not_validated = False
 
-
+player_one = validate_result
 player_two = tictactoe.setOtherPlayer(first_player_input=player_one)
 
 print(f"first player : {player_one} \nother player: {player_two}")
@@ -84,10 +84,11 @@ while board_game_is_on:
     #player_input = tictactoe.player_input(playerInput=player_input)
 
     board = tictactoe.insertingBoard(board_list=board, player_side=player_side , row=int(player_input[0]) , column=int(player_input[1]) )
-
+    display_board = tictactoe.displayBoardAfterInsert(board_list=board)
     #convert to displaying the board
     output_result = "After input Board : {}".format(board)
     print(output_result)
+    print(display_board)
 
     turn_count += 1
 
