@@ -89,7 +89,8 @@ while board_game_is_on:
     print(display_board)
     #if one player is turn count 3 than checking board
     if turn_count >= 5:
-        tictactoe.inspectingBoard(board_list=board)
+        result = tictactoe.inspectingBoard(board_list=board)
+        print(result)
 
 
     #check if there are bingo

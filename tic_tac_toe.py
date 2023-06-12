@@ -97,8 +97,23 @@ class TicTacToe:
         return updated_board
 
     def inspectingBoard(self,board_list):
-        for i in board_list:
-            for j in i :
-                print(j)
+        count_x = 0
+        count_o = 0
+        for i in range(len(board_list)):
+            for j in range(len(board_list[i])):
+                if board_list[i][j] == "X" :
+                    count_x += 1
+                else:
+                    count_o += 1
+            if count_x == 3 and count_o == 3:
+                return "It's draw!"
+            elif count_o == 3:
+                return "Winner is O"
+            elif count_x == 3:
+                return "Winner is X"
+            else:
+                return "There is no result yet"
+
+
 
 
