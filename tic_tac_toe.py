@@ -96,7 +96,7 @@ class TicTacToe:
 
         return updated_board
 
-    def inspectingBoard(self,board_list):
+    def inspectingRow(self,board_list):
         count_x = 0
         count_o = 0
         for i in range(len(board_list)):
@@ -115,5 +115,21 @@ class TicTacToe:
                 return "There is no result yet"
 
 
-
+    def inspectingCol(self , board_list):
+        count_x = 0
+        count_o = 0
+        for i in range(len(board_list)):
+            for j in range(len(board_list)):
+                if board_list[j][i] == "X" :
+                    count_x += 1
+                else:
+                    count_o += 1
+            if count_x == 3 and count_o == 3:
+                return "It's draw!"
+            elif count_o == 3:
+                return "Winner is O"
+            elif count_x == 3:
+                return "Winner is X"
+            else:
+                return "There is no result yet"
 

@@ -88,9 +88,15 @@ while board_game_is_on:
 
     print(display_board)
     #if one player is turn count 3 than checking board
+    #brute Force
     if turn_count >= 5:
-        result = tictactoe.inspectingBoard(board_list=board)
-        print(result)
+        result = tictactoe.inspectingRow(board_list=board)
+        resultCol = tictactoe.inspectingCol(board_list=board)
+        #if result has no winner or draw than game is on loop
+        if result != "There is no result yet":
+            board_game_is_on = False
+        if resultCol != "There is no result yet" :
+            board_game_is_on = False
 
 
     #check if there are bingo
