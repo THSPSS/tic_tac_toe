@@ -148,9 +148,13 @@ class TicTacToe:
         else:
             return "There is no result yet"
 
-    def inspectingReversDiag(self , board_list):
+    def inspectingReversDiag(self, board_len):
         count_x = 0
         count_o = 0
-        for i in range(len(board_list)):
-            pass
+        list = []
+        for i in range(board_len-1 , -1, -1):
+            list.append(((board_len-1)-i,i))
+        return list
+
+
 

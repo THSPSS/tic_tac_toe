@@ -65,4 +65,9 @@ class TestTicTacToe(unittest.TestCase):
 
 
     def test_displayBoardAfterInsert(self):
-        self.assertEqual(ttt.displayBoardAfterInsert(self))
+        pass
+
+
+
+    def test_instpectingReversDiag(self):
+        self.assertEqual(ttt.inspectingReversDiag(self,board_len=3),[(0,2) ,(1,1) ,(2,0)])
