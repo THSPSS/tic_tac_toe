@@ -103,7 +103,7 @@ class TicTacToe:
             for j in range(len(board_list[i])):
                 if board_list[i][j] == "X" :
                     count_x += 1
-                else:
+                elif board_list[i][j] == "O" :
                     count_o += 1
             if count_x == 3 and count_o == 3:
                 return "It's draw!"
@@ -122,7 +122,7 @@ class TicTacToe:
             for j in range(len(board_list)):
                 if board_list[j][i] == "X" :
                     count_x += 1
-                else:
+                elif board_list[i][j] == "O":
                     count_o += 1
             if count_x == 3 and count_o == 3:
                 return "It's draw!"
@@ -139,7 +139,7 @@ class TicTacToe:
         for i in range(len(board_list)):
             if board_list[i][i] == "X":
                 count_x += 1
-            else:
+            elif board_list[i][i] == "O":
                 count_o += 1
         if count_o == 3:
             return "Winner is O"
@@ -148,13 +148,20 @@ class TicTacToe:
         else:
             return "There is no result yet"
 
-    def inspectingReversDiag(self, board_len):
+    def inspectingReversDiag(self, board_list):
         count_x = 0
         count_o = 0
-        list = []
-        for i in range(board_len-1 , -1, -1):
-            list.append(((board_len-1)-i,i))
-        return list
+        for i in range(len(board_list)-1 , -1, -1):
+           if board_list[(len(board_list)-1)-i][i] == "X":
+               count_x += 1
+           elif board_list[(len(board_list)-1)-i][i] == "O":
+               count_o += 1
+        if count_o == 3:
+            return "Winner is O"
+        elif count_x == 3:
+            return "Winner is X"
+        else:
+            return "There is no result yet"
 
 
 
