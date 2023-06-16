@@ -105,14 +105,14 @@ class TicTacToe:
                     count_x += 1
                 elif board_list[i][j] == "O" :
                     count_o += 1
-            if count_x == 3 and count_o == 3:
-                return "It's draw!"
-            elif count_o == 3:
-                return "Winner is O"
-            elif count_x == 3:
-                return "Winner is X"
-            else:
-                return "There is no result yet"
+        if count_x == 3 and count_o == 3:
+            return "It's draw!"
+        elif count_o == 3:
+            return "Winner is O"
+        elif count_x == 3:
+            return "Winner is X"
+        else:
+            return "There is no result yet"
 
 
     def inspectingCol(self , board_list):
@@ -121,17 +121,18 @@ class TicTacToe:
         for i in range(len(board_list)):
             for j in range(len(board_list)):
                 if board_list[j][i] == "X" :
+                    print(j,i)
                     count_x += 1
-                elif board_list[i][j] == "O":
+                elif board_list[j][i] == "O":
                     count_o += 1
-            if count_x == 3 and count_o == 3:
-                return "It's draw!"
-            elif count_o == 3:
-                return "Winner is O"
-            elif count_x == 3:
-                return "Winner is X"
-            else:
-                return "There is no result yet"
+        if count_x == 3 and count_o == 3:
+            return "It's draw!"
+        elif count_o == 3:
+            return "Winner is O"
+        elif count_x == 3:
+            return "Winner is X"
+        else:
+            return f"{count_o}{count_x}There is no result yet"
 
     def inspectingDiag(self , board_list):
         count_x = 0

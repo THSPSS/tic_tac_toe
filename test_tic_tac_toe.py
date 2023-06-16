@@ -71,3 +71,6 @@ class TestTicTacToe(unittest.TestCase):
 
     def test_instpectingReversDiag(self):
         self.assertEqual(ttt.inspectingReversDiag(self,board_list=[["","-","O"],["-","O","-"],["O","","-"]]),"Winner is O")
+
+    def test_inspectingCol(self):
+        self.assertEqual(ttt.inspectingCol(self,board_list=[["-","O","X"],["-","O","X"],["-","-","X"]]),"Winner is X")
