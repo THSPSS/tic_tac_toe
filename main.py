@@ -105,6 +105,27 @@ while board_game_is_on:
         if resultRevDiag != "There is no result yet" :
             board_game_is_on = False
 
+    if turn_count == 9:
+        result = tictactoe.inspectingRow(board_list=board)
+        resultCol = tictactoe.inspectingCol(board_list=board)
+        resultDiag = tictactoe.inspectingDiag(board_list=board)
+        resultRevDiag = tictactoe.inspectingReversDiag(board_list=board)
+        # if result has no winner or draw than game is on loop
+        if result == "There is no result yet":
+            board_game_is_on = False
+            print("It is draw!")
+        if resultCol == "There is no result yet":
+            board_game_is_on = False
+            print("It is draw!")
+        if resultDiag == "There is no result yet":
+            board_game_is_on = False
+            print("It is draw!")
+        # check reverse Diagnol
+        if resultRevDiag == "There is no result yet":
+            board_game_is_on = False
+            print("It is draw!")
+
+
 
     #check if there are bingo
     #inspecting board

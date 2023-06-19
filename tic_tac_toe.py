@@ -97,9 +97,9 @@ class TicTacToe:
         return updated_board
 
     def inspectingRow(self,board_list):
-        count_x = 0
-        count_o = 0
         for i in range(len(board_list)):
+            count_x = 0
+            count_o = 0
             for j in range(len(board_list[i])):
                 if board_list[i][j] == "X" :
                     count_x += 1
@@ -116,12 +116,11 @@ class TicTacToe:
 
 
     def inspectingCol(self , board_list):
-        count_x = 0
-        count_o = 0
         for i in range(len(board_list)):
+            count_x = 0
+            count_o = 0
             for j in range(len(board_list)):
                 if board_list[j][i] == "X" :
-                    print(j,i)
                     count_x += 1
                 elif board_list[j][i] == "O":
                     count_o += 1
@@ -135,9 +134,9 @@ class TicTacToe:
             return f"{count_o}{count_x}There is no result yet"
 
     def inspectingDiag(self , board_list):
-        count_x = 0
-        count_o = 0
         for i in range(len(board_list)):
+            count_x = 0
+            count_o = 0
             if board_list[i][i] == "X":
                 count_x += 1
             elif board_list[i][i] == "O":
@@ -150,9 +149,9 @@ class TicTacToe:
             return "There is no result yet"
 
     def inspectingReversDiag(self, board_list):
-        count_x = 0
-        count_o = 0
         for i in range(len(board_list)-1 , -1, -1):
+           count_x = 0
+           count_o = 0
            if board_list[(len(board_list)-1)-i][i] == "X":
                count_x += 1
            elif board_list[(len(board_list)-1)-i][i] == "O":

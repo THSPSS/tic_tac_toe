@@ -65,7 +65,10 @@ class TestTicTacToe(unittest.TestCase):
 
 
     def test_displayBoardAfterInsert(self):
-        pass
+        self.assertEqual(ttt.displayBoardAfterInsert(self, board_list=[["O", "O", "O"], ["-", "-", "-"], ["X", "-", "X"]]),
+                         " O   O   O  \n"
+                         "---- ---- ---- \n"
+                         " X  ----  X  \n")
 
     def test_inspectingRow(self):
         self.assertEqual(ttt.inspectingCol(self, board_list=[["O", "O", "O"], ["-", "-", "-"], ["X", "-", "X"]]),"Winner is O")
