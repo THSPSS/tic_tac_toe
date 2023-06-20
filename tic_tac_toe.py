@@ -97,25 +97,27 @@ class TicTacToe:
         return updated_board
 
     def inspectingRow(self,board_list):
+        result = "There is no result yet"
+
         for i in range(len(board_list)):
             count_x = 0
             count_o = 0
-            for j in range(len(board_list[i])):
+            for j in range(len(board_list)):
                 if board_list[i][j] == "X" :
                     count_x += 1
                 elif board_list[i][j] == "O" :
                     count_o += 1
-        if count_x == 3 and count_o == 3:
-            return "It's draw!"
-        elif count_o == 3:
-            return "Winner is O"
-        elif count_x == 3:
-            return "Winner is X"
-        else:
-            return "There is no result yet"
+            if count_o == 3:
+                return "Winner is O"
+            elif count_x == 3:
+                return "Winner is X"
+
+        return result
 
 
     def inspectingCol(self , board_list):
+        result = "There is no result yet"
+
         for i in range(len(board_list)):
             count_x = 0
             count_o = 0
@@ -124,19 +126,18 @@ class TicTacToe:
                     count_x += 1
                 elif board_list[j][i] == "O":
                     count_o += 1
-        if count_x == 3 and count_o == 3:
-            return "It's draw!"
-        elif count_o == 3:
-            return "Winner is O"
-        elif count_x == 3:
-            return "Winner is X"
-        else:
-            return f"{count_o}{count_x}There is no result yet"
+            if count_o == 3:
+                return "Winner is O"
+            elif count_x == 3:
+                return "Winner is X"
+
+        return result
 
     def inspectingDiag(self , board_list):
+        result = "There is no result yet"
+        count_x = 0
+        count_o = 0
         for i in range(len(board_list)):
-            count_x = 0
-            count_o = 0
             if board_list[i][i] == "X":
                 count_x += 1
             elif board_list[i][i] == "O":
@@ -145,23 +146,26 @@ class TicTacToe:
             return "Winner is O"
         elif count_x == 3:
             return "Winner is X"
-        else:
-            return "There is no result yet"
+
+        return result
 
     def inspectingReversDiag(self, board_list):
+        result = "There is no result yet"
+        count_x = 0
+        count_o = 0
+
         for i in range(len(board_list)-1 , -1, -1):
-           count_x = 0
-           count_o = 0
            if board_list[(len(board_list)-1)-i][i] == "X":
                count_x += 1
            elif board_list[(len(board_list)-1)-i][i] == "O":
-               count_o += 1
+                count_o += 1
+
         if count_o == 3:
-            return "Winner is O"
+          return "Winner is O"
         elif count_x == 3:
-            return "Winner is X"
-        else:
-            return "There is no result yet"
+          return "Winner is X"
+
+        return result
 
 
 
