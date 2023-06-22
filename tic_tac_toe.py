@@ -35,13 +35,19 @@ class TicTacToe:
 
     #display the board
     def displayBoard(self, board_range):
-        dispaly_board = ""
+        count = 1
+        display_board = ""
         for i in range(board_range):
             for j in range(board_range) :
-                dispaly_board += "---- "
-            dispaly_board += "\n"
+                display_board += f" {count} "
+                if j < board_range - 1:
+                    display_board += "|"
+                count += 1
+            display_board += "\n"
+            if i < board_range - 1:
+                display_board += "------------\n"
 
-        return dispaly_board
+        return display_board
 
     def displayBoardAfterInsert(self,  board_list):
         dispaly_board = ""

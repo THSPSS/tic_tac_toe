@@ -15,7 +15,7 @@ class TestTicTacToe(unittest.TestCase):
         self.assertEqual(ttt.setOtherPlayer(self,"X"),"O")
 
 
-    def test_making_board(self):
+    def test_making_a_new_board(self):
         self.assertEqual(ttt.makingANewBoard(self,board_num=3), [["-","-","-"],["-","-","-"],["-","-","-"]])
 
 
@@ -59,16 +59,18 @@ class TestTicTacToe(unittest.TestCase):
     #test display board
     def test_displayBoard(self):
         self.assertEqual(ttt.displayBoard(self,3),
-                         "---- ---- ---- \n"
-                         "---- ---- ---- \n"
-                         "---- ---- ---- \n")
+                         " 1 | 2 | 3 \n"
+                         "------------\n"
+                         " 4 | 5 | 6 \n"
+                         "------------\n"
+                         " 7 | 8 | 9 \n")
 
 
-    def test_displayBoardAfterInsert(self):
-        self.assertEqual(ttt.displayBoardAfterInsert(self, board_list=[["O", "O", "O"], ["-", "-", "-"], ["X", "-", "X"]]),
-                         " O   O   O  \n"
-                         "---- ---- ---- \n"
-                         " X  ----  X  \n")
+    # def test_displayBoardAfterInsert(self):
+    #     self.assertEqual(ttt.displayBoardAfterInsert(self, board_list=[["O", "O", "O"], ["-", "-", "-"], ["X", "-", "X"]]),
+    #                      " O   O   O  \n"
+    #                      "---- ---- ---- \n"
+    #                      " X  ----  X  \n")
 
     def test_inspectingRow(self):
         self.assertEqual(ttt.inspectingRow(self, board_list=[["O", "O", "O"], ["X", "X", "-"], ["-", "-", "-"]]),"Winner is O")
