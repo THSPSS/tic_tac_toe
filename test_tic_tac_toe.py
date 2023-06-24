@@ -66,11 +66,13 @@ class TestTicTacToe(unittest.TestCase):
                          " 7 | 8 | 9 \n")
 
 
-    # def test_displayBoardAfterInsert(self):
-    #     self.assertEqual(ttt.displayBoardAfterInsert(self, board_list=[["O", "O", "O"], ["-", "-", "-"], ["X", "-", "X"]]),
-    #                      " O   O   O  \n"
-    #                      "---- ---- ---- \n"
-    #                      " X  ----  X  \n")
+    def test_displayBoardAfterInsert(self):
+        self.assertEqual(ttt.displayBoardAfterInsert(self, board_list=[["O", "O", "O"], ["4", "5", "6"], ["X", "8", "X"]]),
+                         " O | O | O \n"
+                         "------------\n"
+                         " 4 | 5 | 6 \n"
+                         "------------\n"
+                         " X | 8 | X \n")
 
     def test_inspectingRow(self):
         self.assertEqual(ttt.inspectingRow(self, board_list=[["O", "O", "O"], ["X", "X", "-"], ["-", "-", "-"]]),"Winner is O")
