@@ -22,12 +22,12 @@ class TicTacToe:
     # 3 * 3 board
     def makingANewBoard(self, board_num):
         row, col = board_num, board_num
-        board_list = [["-"] * col] * row
+        board_list = [[""] * col] * row
 
         return board_list
 
     def checkWholeBoard(self, board, row, column):
-        if board[row][column] != "-":
+        if board[row][column] !=  "":
             # return False which is board is not empty
             return False
         # otherwise , return True which indicate that board is empty
