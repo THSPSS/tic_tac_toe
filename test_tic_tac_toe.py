@@ -39,7 +39,7 @@ class TestTicTacToe(unittest.TestCase):
         self.assertTrue(ttt.checkWholeBoard(self ,[["","",""],["","",""],["","",""]],row=0, column=0))
 
     def test_checking_whole_board_is_not_empty(self):
-        self.assertFalse(ttt.checkWholeBoard(self,board=[["O","-","-"],["","-","-"],["","-","-"]],row=0,column=0))
+        self.assertFalse(ttt.checkWholeBoard(self,board=[["O","",""],["","",""],["","",""]],row=0,column=0))
 
     def test_board_is_empty_or_not(self):
         self.assertFalse(ttt.isInputBoardEmpty(self,player_input={ "player_side" : "O" , "column" : 1 , "row" : 1},board=[["-","-","-"],["-","O","-"],["O","-","-"]]))
