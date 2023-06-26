@@ -23,6 +23,11 @@ class TicTacToe:
     def makingANewBoard(self, board_num):
         row, col = board_num, board_num
         board_list = [[""] * col] * row
+        count = 1
+        for i in range(row):
+            for j in range(col) :
+                board_list[i][j] = count
+            count += 1
 
         return board_list
 
