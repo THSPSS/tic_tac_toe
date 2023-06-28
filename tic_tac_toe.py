@@ -77,10 +77,17 @@ class TicTacToe:
 
 
     def validateUserInput(self, player_input):
-        if len(player_input) != 2:
-            return False
+        try:
+           user_input = int(player_input)
+           if user_input in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
+               return True
+           else:
+               return False
 
-        return True
+        except ValueError:
+            return "please enter number"
+
+
 
     def validateInput(self, player_one_input):
         player_one_input = player_one_input.upper()
