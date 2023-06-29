@@ -41,15 +41,13 @@ class TicTacToe:
         return True
 
     #display the board
-    def displayBoard(self, board_range):
-        count = 1
+    def displayBoard(self, board_range ,board_list):
         display_board = ""
         for i in range(board_range):
             for j in range(board_range) :
-                display_board += f" {count} "
+                display_board += f" {str(board_list[i][j])} "
                 if j < board_range - 1:
                     display_board += "|"
-                count += 1
             display_board += "\n"
             if i < board_range - 1:
                 display_board += "------------\n"
@@ -61,10 +59,7 @@ class TicTacToe:
         display_board = ""
         for i in range(len(board_list)):
             for j in range(len(board_list)) :
-                if board_list[i][j] not in ["O", "X"] :
-                    display_board += f" {count} "
-                else:
-                    display_board += f" {board_list[i][j]} "
+                display_board += f" {board_list[i][j]} "
                 if j < len(board_list) - 1:
                     display_board += "|"
                 count += 1

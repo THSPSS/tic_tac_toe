@@ -67,7 +67,7 @@ class TestTicTacToe(unittest.TestCase):
 
     #test display board
     def test_displayBoard(self):
-        self.assertEqual(ttt.displayBoard(self,3),
+        self.assertEqual(ttt.displayBoard(self,3, [[1,2,3],[4,5,6],[7,8,9]]),
                          " 1 | 2 | 3 \n"
                          "------------\n"
                          " 4 | 5 | 6 \n"
