@@ -73,11 +73,11 @@ class TicTacToe:
 
     def validateUserInput(self, player_input):
         try:
-           user_input = int(player_input)
-           if user_input in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
-               return True
-           else:
-               return False
+            user_input = int(player_input)
+            if user_input in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
+                return True
+            else:
+                return False
 
         except ValueError:
             return "please enter number"
@@ -92,14 +92,25 @@ class TicTacToe:
 
         return player_one_input
 
+
     def playerInput(self, player_inputs):
-        place = player_inputs
-        row = place[0]
-        column = place[1]
-        # value = list[column][row]
+        user_hash = {
+            "1": (0, 0),
+            "2": (0, 1),
+            "3": (0, 2),
+            "4": (1, 0),
+            "5": (1, 1),
+            "6": (1, 2),
+            "7": (2, 0),
+            "8": (2, 1),
+            "9": (2, 2)
+        }
+
+        userInput  = user_hash[player_inputs]
+
 
         # return "player {} column is {}, row is {}".format(player_side ,column , row)
-        return row, column
+        return userInput
 
     def isInputBoardEmpty(self, player_input, board):
         # player_input_dict = self.player_input(playerInputs=player_input)
@@ -176,15 +187,15 @@ class TicTacToe:
         count_o = 0
 
         for i in range(len(board_list)-1 , -1, -1):
-           if board_list[(len(board_list)-1)-i][i] == "X":
-               count_x += 1
-           elif board_list[(len(board_list)-1)-i][i] == "O":
+            if board_list[(len(board_list)-1)-i][i] == "X":
+                count_x += 1
+            elif board_list[(len(board_list)-1)-i][i] == "O":
                 count_o += 1
 
         if count_o == 3:
-          return "Winner is O"
+            return "Winner is O"
         elif count_x == 3:
-          return "Winner is X"
+            return "Winner is X"
 
         return result
 
