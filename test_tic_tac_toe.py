@@ -27,13 +27,17 @@ class TestTicTacToe(unittest.TestCase):
         self.assertEqual(ttt.playerInput(self , "1"), (0, 0))
 
 
+    def test_player_input(self):
+        self.assertEqual(ttt.playerInput(self , "2"), (0, 1))
+
+
     def test_inserting_board(self):
         self.assertEqual(ttt.insertingBoard(self ,
-                                             board_list=[["-","-","-"],["-","-","-"],["-","-","-"]],
+                                             board_list=[[1,2,3],[4,5,6],[7,8,9]],
                                              player_side="O" ,
-                                             row=2 ,
-                                             column=0),
-                         [["-","-","-"],["-","-","-"],["O","-","-"]])
+                                             input=(0,1)),
+                         [[1,"O",3],[4,5,6],[7,8,9]])
+
 
     def test_checking_if_board_is_empty(self):
         self.assertTrue(ttt.checkWholeBoard(self ,[["","",""],["","",""],["","",""]],row=0, column=0))

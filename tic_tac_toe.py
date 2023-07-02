@@ -116,15 +116,15 @@ class TicTacToe:
         # player_input_dict = self.player_input(playerInputs=player_input)
         player_input_dict = player_input
 
-        #print(player_input_dict)
+        print(player_input_dict)
 
         if not board[player_input_dict['row']][player_input_dict['column']]:
             return True
         return False
 
-    def insertingBoard(self, board_list, player_side, row, column):
+    def insertingBoard(self, board_list, player_side, input):
         updated_board = [row[:] for row in board_list]
-        updated_board[row][column] = player_side
+        updated_board[input[0]][input[1]] = player_side
 
         return updated_board
 
