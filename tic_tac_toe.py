@@ -94,6 +94,7 @@ class TicTacToe:
 
 
     def playerInput(self, player_inputs):
+        userInput = ""
         user_hash = {
             "1": (0, 0),
             "2": (0, 1),
@@ -106,7 +107,11 @@ class TicTacToe:
             "9": (2, 2)
         }
 
-        userInput  = user_hash[player_inputs]
+
+        try :
+            userInput = user_hash[player_inputs]
+        except KeyError :
+            return "please enter number from 1 to 9"
 
 
         # return "player {} column is {}, row is {}".format(player_side ,column , row)
