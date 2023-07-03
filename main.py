@@ -19,7 +19,7 @@ input_not_validated = True
 
 #making board
 board = tictactoe.makingANewBoard(board_num=board_num)
-display_board = tictactoe.displayBoard(board_range=board_num)
+display_board = tictactoe.displayBoard(board_range=board_num , board_list=board)
 
 
 print(display_board)
@@ -49,7 +49,6 @@ while input_not_validated :
 
 player_one = validate_result
 player_two = tictactoe.setOtherPlayer(first_player_input=player_one)
-
 print(f"first player : {player_one} \nother player: {player_two}")
 
 #couting the number to find which user playing
@@ -68,12 +67,14 @@ while board_game_is_on:
     print(board)
 
     #change number to start with 1 not 0
-    player_input = input("Please input your choice as [row][column] like 11 or 12 : ")
+    player_input = input("Please enter your choice from 1 to 9 : ")
 
     checkUserInput = tictactoe.validateUserInput(player_input=player_input)
 
     if not checkUserInput :
-        player_input = input("Please input your choice as [row][column] like 01 or 02")
+        player_input = input("Please enter a number")
+
+    player_input = tictactoe.playerInput(player_inputs = player_input)
 
     checkBoard = tictactoe.checkWholeBoard(board=board , row=int(player_input[0]) ,column=int(player_input[1]))
 
@@ -81,9 +82,9 @@ while board_game_is_on:
         player_input = input("that place already be chosen. Please choose empty space : ")
 
     print(checkBoard)
-    #player_input = tictactoe.player_input(playerInput=player_input)
+    player_input = tictactoe.playerInput(player_inputs = player_input)
 
-    board = tictactoe.insertingBoard(board_list=board, player_side=player_side , row=int(player_input[0]) , column=int(player_input[1]) )
+    board = tictactoe.insertingBoard(board_list=board, player_side=player_side , input = player_input)
     display_board = tictactoe.displayBoardAfterInsert(board_list=board)
 
     print(display_board)

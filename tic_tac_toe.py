@@ -34,7 +34,7 @@ class TicTacToe:
         return board_list
 
     def checkWholeBoard(self, board, row, column):
-        if board[row][column] !=  "":
+        if board[row][column] not in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
             # return False which is board is not empty
             return False
         # otherwise , return True which indicate that board is empty
@@ -113,8 +113,6 @@ class TicTacToe:
         except KeyError :
             return "please enter number from 1 to 9"
 
-
-        # return "player {} column is {}, row is {}".format(player_side ,column , row)
         return userInput
 
     def isInputBoardEmpty(self, player_input, board):
@@ -128,6 +126,7 @@ class TicTacToe:
         return False
 
     def insertingBoard(self, board_list, player_side, input):
+        print("user input :" , input)
         updated_board = [row[:] for row in board_list]
         updated_board[input[0]][input[1]] = player_side
 

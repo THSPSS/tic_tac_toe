@@ -83,7 +83,7 @@ class TestTicTacToe(unittest.TestCase):
 
 
     def test_displayBoardAfterInsert(self):
-        self.assertEqual(ttt.displayBoardAfterInsert(self, board_list=[["O", "O", "O"], ["4", "5", "6"], ["X", "8", "X"]]),
+        self.assertEqual(ttt.displayBoardAfterInsert(self, board_list=[["O", "O", "O"], [4, 5, 6], ["X", 8, "X"]]),
                          " O | O | O \n"
                          "------------\n"
                          " 4 | 5 | 6 \n"
@@ -91,25 +91,25 @@ class TestTicTacToe(unittest.TestCase):
                          " X | 8 | X \n")
 
     def test_inspectingRow(self):
-        self.assertEqual(ttt.inspectingRow(self, board_list=[["O", "O", "O"], ["X", "X", "-"], ["-", "-", "-"]]),"Winner is O")
+        self.assertEqual(ttt.inspectingRow(self, board_list=[["O", "O", "O"], ["X", "X", 6], [7,8,9]]),"Winner is O")
 
     def test_two_inspectingRow(self):
-        self.assertEqual(ttt.inspectingRow(self, board_list=[["-", "O", "O"], ["X", "X", "X"], ["-", "", "-"]]),"Winner is X")
+        self.assertEqual(ttt.inspectingRow(self, board_list=[[1, "O", "O"], ["X", "X", "X"], [7, 8, 9]]),"Winner is X")
 
     def test_inspectingCol(self):
-        self.assertEqual(ttt.inspectingCol(self,board_list=[["-","O","X"],["-","O","X"],["-","-","X"]]),"Winner is X")
+        self.assertEqual(ttt.inspectingCol(self,board_list=[[1,"O","X"],[3,"O","X"],[6,7,"X"]]),"Winner is X")
 
     def test_two_inspectingCol(self):
-        self.assertEqual(ttt.inspectingCol(self,board_list=[["O","X",""],["O","X","X"],["-","X","O"]]),"Winner is X")
+        self.assertEqual(ttt.inspectingCol(self,board_list=[["O","X",3],["O","X","X"],[7,"X","O"]]),"Winner is X")
 
     def test_inspectingDiag(self):
-        self.assertEqual(ttt.inspectingDiag(self,board_list=[["X","O","O"],["O","X","-"],["O","-","X"]]),"Winner is X")
+        self.assertEqual(ttt.inspectingDiag(self,board_list=[["X","O","O"],["O","X",6],["O",8,"X"]]),"Winner is X")
 
     def test_two_inspectingDiag(self):
-        self.assertEqual(ttt.inspectingDiag(self,board_list=[['O', 'X', 'X'], ['-', 'O', '-'], ['-', '-', 'O']]),"Winner is O")
+        self.assertEqual(ttt.inspectingDiag(self,board_list=[["O","X","X"], [4,"O",6], [7, 8, "O"]]),"Winner is O")
 
     def test_inspectingReversDiag(self):
-        self.assertEqual(ttt.inspectingReversDiag(self,board_list=[["-","-","O"],["-","O","-"],["O","-","-"]]),"Winner is O")
+        self.assertEqual(ttt.inspectingReversDiag(self,board_list=[[1,2,"O"],[4,"O",6],["O",7,8]]),"Winner is O")
 
     def test_draw_case(self):
         self.assertEqual(ttt.inspectingReversDiag(self,board_list=[["O","X","O"],["X","O","O"],["X","O","X"]]),"There is no result yet")
