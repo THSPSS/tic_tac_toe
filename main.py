@@ -82,7 +82,8 @@ while board_game_is_on:
         player_input = input("that place already be chosen. Please choose empty space : ")
 
     print(checkBoard)
-    player_input = tictactoe.playerInput(player_inputs = player_input)
+
+    print("user_input :", player_input)
 
     board = tictactoe.insertingBoard(board_list=board, player_side=player_side , input = player_input)
     display_board = tictactoe.displayBoardAfterInsert(board_list=board)

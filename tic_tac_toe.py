@@ -107,7 +107,6 @@ class TicTacToe:
             "9": (2, 2)
         }
 
-
         try :
             userInput = user_hash[player_inputs]
         except KeyError :
@@ -126,7 +125,6 @@ class TicTacToe:
         return False
 
     def insertingBoard(self, board_list, player_side, input):
-        print("user input :" , input)
         updated_board = [row[:] for row in board_list]
         updated_board[input[0]][input[1]] = player_side
 
