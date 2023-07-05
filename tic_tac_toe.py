@@ -118,8 +118,6 @@ class TicTacToe:
         # player_input_dict = self.player_input(playerInputs=player_input)
         player_input_dict = player_input
 
-        print(player_input_dict)
-
         if not board[player_input_dict['row']][player_input_dict['column']]:
             return True
         return False

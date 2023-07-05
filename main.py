@@ -17,6 +17,9 @@ board_game_is_on = True
 input_not_validated = True
 
 
+#Replay TicTacToe game
+replay_on = True
+
 #making board
 board = tictactoe.makingANewBoard(board_num=board_num)
 display_board = tictactoe.displayBoard(board_range=board_num , board_list=board)
@@ -54,7 +57,7 @@ print(f"first player : {player_one} \nother player: {player_two}")
 #couting the number to find which user playing
 turn_count = 1
 
-while board_game_is_on:
+while board_game_is_on and replay_on :
 
     #checking user_position with turn_count
     if turn_count % 2 != 0 :
@@ -82,8 +85,6 @@ while board_game_is_on:
         player_input = input("that place already be chosen. Please choose empty space : ")
 
     print(checkBoard)
-
-    print("user_input :", player_input)
 
     board = tictactoe.insertingBoard(board_list=board, player_side=player_side , input = player_input)
     display_board = tictactoe.displayBoardAfterInsert(board_list=board)
@@ -132,14 +133,19 @@ while board_game_is_on:
             board_game_is_on = False
             print("It is draw!")
 
+        is_replay = input("Do you want to Stop this game? Enter Y , or enter N")
 
+        if is_replay.upper() == 'N':
+            board_game_is_on = False
 
     #check if there are bingo
     #inspecting board
 
-
-
-
     turn_count += 1
+
+
+
+
+
 
 
