@@ -9,10 +9,10 @@ class TestTicTacToe(unittest.TestCase):
     #    self.assertEqual(ttt.getting_user_position())
 
     def test_set_other_player_when_O(self):
-        self.assertEqual(ttt.setOtherPlayer(self,"O"),"X")
+        self.assertEqual(ttt.set_other_player(self,"O"),"X")
 
     def test_set_other_player_when_X(self):
-        self.assertEqual(ttt.setOtherPlayer(self,"X"),"O")
+        self.assertEqual(ttt.set_other_player(self,"X"),"O")
 
 
     def test_making_a_new_board(self):

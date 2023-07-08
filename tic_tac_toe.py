@@ -12,7 +12,7 @@ class TicTacToe:
 
 
 
-    def setOtherPlayer(self, first_player_input):
+    def set_other_player(self, first_player_input):
         if first_player_input == "O":
             return "X"
         else:
@@ -198,6 +198,18 @@ class TicTacToe:
             return "Winner is X"
 
         return result
+
+    def check_for_Win(self,board):
+        result_for_checking = ""
+        result = self.inspectingRow(board_list=board)
+        resultCol = self.inspectingCol(board_list=board)
+        resultDiag = self.inspectingDiag(board_list=board)
+        resultRevDiag = self.inspectingReversDiag(board_list=board)
+
+        return result , resultCol , resultDiag , resultRevDiag
+
+
+
 
 
 

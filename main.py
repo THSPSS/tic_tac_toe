@@ -47,7 +47,7 @@ def play_tic_tac_toe():
             input_not_validated = False
 
     player_one = validate_result
-    player_two = tictactoe.setOtherPlayer(first_player_input=player_one)
+    player_two = tictactoe.set_other_player(first_player_input=player_one)
     print(f"first player : {player_one} \nother player: {player_two}")
 
     #couting the number to find which user playing
@@ -128,6 +128,7 @@ def play_tic_tac_toe():
                 print("It is draw!")
 
             print(result)
+            print("Game over!")
             is_replay = input("Do you want to quit this game?")
 
             if is_replay.upper() == 'Y':
