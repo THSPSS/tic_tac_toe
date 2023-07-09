@@ -20,7 +20,7 @@ def play_tic_tac_toe():
     replay_on = True
 
     #making board
-    board = tictactoe.makingANewBoard(board_num=board_num)
+    board = tictactoe.making_a_new_Board(board_num=board_num)
     display_board = tictactoe.displayBoard(board_range=board_num , board_list=board)
 
 

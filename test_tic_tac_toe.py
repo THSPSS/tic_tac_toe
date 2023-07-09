@@ -16,7 +16,7 @@ class TestTicTacToe(unittest.TestCase):
 
 
     def test_making_a_new_board(self):
-        self.assertEqual(ttt.makingANewBoard(self,board_num=3), [[1,2,3],[4,5,6],[7,8,9]])
+        self.assertEqual(ttt.making_a_new_Board(self,board_num=3), [[1,2,3],[4,5,6],[7,8,9]])
 
 
     # def test_checking_user_input_length(self):

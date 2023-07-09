@@ -22,7 +22,7 @@ class TicTacToe:
     # 3 * 3 board
     # [[1 , '' , '', ] ,[1 , '' , '', ],[1 , '' , '', ]]
     # because it multiply same row , when it is called as [0][0] , other row is also called out
-    def makingANewBoard(self, board_num):
+    def making_a_new_Board(self, board_num):
         row, col = board_num, board_num
         board_list = [[""] * col for _ in range(row)]
         count = 1
