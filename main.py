@@ -75,7 +75,7 @@ def play_tic_tac_toe():
 
         player_input = tictactoe.playerInput(player_inputs = player_input)
 
-        checkBoard = tictactoe.checkWholeBoard(board=board , row=int(player_input[0]) ,column=int(player_input[1]))
+        checkBoard = tictactoe.check_whole_board(board=board , row=int(player_input[0]) ,column=int(player_input[1]))
 
         if not checkBoard :
             player_input = input("that place already be chosen. Please choose empty space : ")
