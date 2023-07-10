@@ -93,9 +93,8 @@ def play_tic_tac_toe():
             resultDiag = tictactoe.inspectingDiag(board_list=board)
             resultRevDiag = tictactoe.inspectingReversDiag(board_list=board)
             #if result has no winner or draw than game is on loop
-            if result != "There is no result yet":
-                board_game_is_on = False
-                print(result)
+            board_game_is_on = tictactoe.check_for_board_game_on(user_result=result)
+            print(result)
             if resultCol != "There is no result yet" :
                 board_game_is_on = False
                 print(resultCol)

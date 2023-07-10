@@ -114,3 +114,9 @@ class TestTicTacToe(unittest.TestCase):
     def test_draw_case(self):
         self.assertEqual(ttt.inspectingReversDiag(self,board_list=[["O","X","O"],["X","O","O"],["X","O","X"]]),"There is no result yet")
 
+    def test_check_for_board_game_on_False(self):
+        self.assertFalse(ttt.check_for_board_game_on(self,"Winner is X"))
+
+    def test_check_for_board_game_on_True(self):
+        self.assertTrue(ttt.check_for_board_game_on(self,"There is no result yet"))
+
