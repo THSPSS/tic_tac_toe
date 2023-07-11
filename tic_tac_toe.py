@@ -208,8 +208,8 @@ class TicTacToe:
 
         return result , resultCol , resultDiag , resultRevDiag
 
-    def check_for_board_game_on(self, user_result):
-        if user_result != "There is no result yet":
+    def check_for_board_game_on(self, row_result, col_result, result_diag, result_rev_diag):
+        if (row_result or col_result or result_diag or result_rev_diag) != "There is no result yet":
             return False
 
         return True
