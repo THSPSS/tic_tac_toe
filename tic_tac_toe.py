@@ -41,7 +41,7 @@ class TicTacToe:
         return True
 
     #display the board
-    def displayBoard(self, board_range ,board_list):
+    def display_board(self, board_range ,board_list):
         display_board = ""
         for i in range(board_range):
             for j in range(board_range) :
@@ -54,7 +54,7 @@ class TicTacToe:
 
         return display_board
 
-    def displayBoardAfterInsert(self,  board_list):
+    def display_board_after_insert(self,  board_list):
         count = 1
         display_board = ""
         for i in range(len(board_list)):

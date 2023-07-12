@@ -73,8 +73,8 @@ class TestTicTacToe(unittest.TestCase):
         self.assertEqual(ttt.validateUserInput(self,player_input="d"),"please enter number")
 
     #test display board
-    def test_displayBoard(self):
-        self.assertEqual(ttt.displayBoard(self,3, [[1,2,3],[4,5,6],[7,8,9]]),
+    def test_display_board(self):
+        self.assertEqual(ttt.display_board(self,3, [[1,2,3],[4,5,6],[7,8,9]]),
                          " 1 | 2 | 3 \n"
                          "------------\n"
                          " 4 | 5 | 6 \n"
@@ -82,8 +82,8 @@ class TestTicTacToe(unittest.TestCase):
                          " 7 | 8 | 9 \n")
 
 
-    def test_displayBoardAfterInsert(self):
-        self.assertEqual(ttt.displayBoardAfterInsert(self, board_list=[["O", "O", "O"], [4, 5, 6], ["X", 8, "X"]]),
+    def test_display_boardAfterInsert(self):
+        self.assertEqual(ttt.display_board_after_insert(self, board_list=[["O", "O", "O"], [4, 5, 6], ["X", 8, "X"]]),
                          " O | O | O \n"
                          "------------\n"
                          " 4 | 5 | 6 \n"

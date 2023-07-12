@@ -21,7 +21,7 @@ def play_tic_tac_toe():
 
     #making board
     board = tictactoe.making_a_new_Board(board_num=board_num)
-    display_board = tictactoe.displayBoard(board_range=board_num , board_list=board)
+    display_board = tictactoe.display_board(board_range=board_num , board_list=board)
 
 
 
@@ -83,7 +83,7 @@ def play_tic_tac_toe():
         print(checkBoard)
 
         board = tictactoe.insertingBoard(board_list=board, player_side=player_side , input = player_input)
-        display_board = tictactoe.displayBoardAfterInsert(board_list=board)
+        display_board = tictactoe.display_board_after_insert(board_list=board)
 
         print(display_board)
 
