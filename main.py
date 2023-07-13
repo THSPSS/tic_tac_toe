@@ -68,7 +68,7 @@ def play_tic_tac_toe():
         #change number to start with 1 not 0
         player_input = input("Please enter your choice from 1 to 9 : ")
 
-        checkUserInput = tictactoe.validateUserInput(player_input=player_input)
+        checkUserInput = tictactoe.validate_user_input(player_input=player_input)
 
         if not checkUserInput :
             player_input = input("Please enter a number")

@@ -71,7 +71,7 @@ class TicTacToe:
 
 
 
-    def validateUserInput(self, player_input):
+    def validate_user_input(self, player_input):
         try:
             user_input = int(player_input)
             if user_input in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
