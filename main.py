@@ -93,19 +93,12 @@ def play_tic_tac_toe():
             resultDiag = tictactoe.inspectingDiag(board_list=board)
             resultRevDiag = tictactoe.inspectingReversDiag(board_list=board)
             #if result has no winner or draw than game is on loop
-            if result != "There is no result yet":
-                board_game_is_on = False
+            board_game_is_on = tictactoe.check_for_board_game_on(result , resultCol , resultDiag , resultRevDiag)
+
             print(result)
-            if resultCol != "There is no result yet" :
-                board_game_is_on = False
-                print(resultCol)
-            if resultDiag != "There is no result yet" :
-                board_game_is_on = False
-                print(resultDiag)
-            #check reverse Diagnol
-            if resultRevDiag != "There is no result yet" :
-                board_game_is_on = False
-                print(resultRevDiag)
+            print(resultCol)
+            print(resultDiag)
+            print(resultRevDiag)
 
         if turn_count == 9:
             result = tictactoe.inspectingRow(board_list=board)

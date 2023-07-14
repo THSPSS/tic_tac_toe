@@ -84,7 +84,7 @@ class TicTacToe:
 
 
 
-    def validateInput(self, player_one_input):
+    def validate_input(self, player_one_input):
         player_one_input = player_one_input.upper()
 
         if player_one_input not in ["O", "X"]:

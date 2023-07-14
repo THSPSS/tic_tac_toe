@@ -51,17 +51,17 @@ class TestTicTacToe(unittest.TestCase):
     # def test_board_is_empty_or_not(self):
     #     self.assertFalse(ttt.isInputBoardEmpty(self,player_input="1",board=[["O",2,3],[4,5,6],[7,8,9]]))
 
-    def test_validateInput_empty_string(self):
-        self.assertFalse(ttt.validateInput(self,player_one_input=""))
+    def test_validate_input_empty_string(self):
+        self.assertFalse(ttt.validate_input(self,player_one_input=""))
 
-    def test_validateInput_number(self):
-        self.assertFalse(ttt.validateInput(self,player_one_input="11"))
+    def test_validate_input_number(self):
+        self.assertFalse(ttt.validate_input(self,player_one_input="11"))
 
-    def test_validateInput_typo(self):
-        self.assertFalse(ttt.validateInput(self,player_one_input="ㅇ"))
+    def test_validate_input_typo(self):
+        self.assertFalse(ttt.validate_input(self,player_one_input="ㅇ"))
 
-    def test_validateInput_True(self):
-        self.assertTrue(ttt.validateInput(self,player_one_input="X"))
+    def test_validate_input_True(self):
+        self.assertTrue(ttt.validate_input(self,player_one_input="X"))
 
     def test_validate_user_input_False(self):
         self.assertFalse(ttt.validate_user_input(self,player_input="12"))
