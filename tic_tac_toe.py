@@ -93,7 +93,7 @@ class TicTacToe:
         return player_one_input
 
 
-    def playerInput(self, player_inputs):
+    def player_input(self, player_inputs):
         userInput = ""
         user_hash = {
             "1": (0, 0),
@@ -114,7 +114,7 @@ class TicTacToe:
 
         return userInput
 
-    def isInputBoardEmpty(self, player_input, board):
+    def is_input_board_empty(self, player_input, board):
         # player_input_dict = self.player_input(playerInputs=player_input)
         player_input_dict = player_input
 
@@ -122,13 +122,13 @@ class TicTacToe:
             return True
         return False
 
-    def insertingBoard(self, board_list, player_side, input):
+    def inserting_board(self, board_list, player_side, input):
         updated_board = [row[:] for row in board_list]
         updated_board[input[0]][input[1]] = player_side
 
         return updated_board
 
-    def inspectingRow(self,board_list):
+    def inspecting_row(self,board_list):
         result = "There is no result yet"
 
         for i in range(len(board_list)):
@@ -147,7 +147,7 @@ class TicTacToe:
         return result
 
 
-    def inspectingCol(self , board_list):
+    def inspecting_col(self , board_list):
         result = "There is no result yet"
 
         for i in range(len(board_list)):
@@ -165,7 +165,7 @@ class TicTacToe:
 
         return result
 
-    def inspectingDiag(self , board_list):
+    def inspecting_diag(self , board_list):
         result = "There is no result yet"
         count_x = 0
         count_o = 0
@@ -181,7 +181,7 @@ class TicTacToe:
 
         return result
 
-    def inspectingReversDiag(self, board_list):
+    def inspecting_revers_diag(self, board_list):
         result = "There is no result yet"
         count_x = 0
         count_o = 0
@@ -201,10 +201,10 @@ class TicTacToe:
 
     def check_for_Win(self,board):
         result_for_checking = ""
-        result = self.inspectingRow(board_list=board)
-        resultCol = self.inspectingCol(board_list=board)
-        resultDiag = self.inspectingDiag(board_list=board)
-        resultRevDiag = self.inspectingReversDiag(board_list=board)
+        result = self.inspecting_row(board_list=board)
+        resultCol = self.inspecting_col(board_list=board)
+        resultDiag = self.inspecting_diag(board_list=board)
+        resultRevDiag = self.inspecting_revers_diag(board_list=board)
 
         return result , resultCol , resultDiag , resultRevDiag
 

@@ -24,18 +24,18 @@ class TestTicTacToe(unittest.TestCase):
 
 
     def test_player_input(self):
-        self.assertEqual(ttt.playerInput(self , "1"), (0, 0))
+        self.assertEqual(ttt.player_input(self , "1"), (0, 0))
 
 
     def test_player_input(self):
-        self.assertEqual(ttt.playerInput(self , "2"), (0, 1))
+        self.assertEqual(ttt.player_input(self , "2"), (0, 1))
 
     def test_player_input(self):
-        self.assertEqual(ttt.playerInput(self , "10"), "please enter number from 1 to 9")
+        self.assertEqual(ttt.player_input(self , "10"), "please enter number from 1 to 9")
 
 
     def test_inserting_board(self):
-        self.assertEqual(ttt.insertingBoard(self ,
+        self.assertEqual(ttt.inserting_board(self ,
                                              board_list=[[1,2,3],[4,5,6],[7,8,9]],
                                              player_side="O" ,
                                              input=(0,1)),
@@ -49,7 +49,7 @@ class TestTicTacToe(unittest.TestCase):
         self.assertFalse(ttt.check_whole_board(self,board=[["O",2,3],[4,5,6],[7,8,9]],row=0,column=0))
 
     # def test_board_is_empty_or_not(self):
-    #     self.assertFalse(ttt.isInputBoardEmpty(self,player_input="1",board=[["O",2,3],[4,5,6],[7,8,9]]))
+    #     self.assertFalse(ttt.is_input_board_empty(self,player_input="1",board=[["O",2,3],[4,5,6],[7,8,9]]))
 
     def test_validate_input_empty_string(self):
         self.assertFalse(ttt.validate_input(self,player_one_input=""))
@@ -91,28 +91,28 @@ class TestTicTacToe(unittest.TestCase):
                          " X | 8 | X \n")
 
     def test_inspectingRow(self):
-        self.assertEqual(ttt.inspectingRow(self, board_list=[["O", "O", "O"], ["X", "X", 6], [7,8,9]]),"Winner is O")
+        self.assertEqual(ttt.inspecting_row(self, board_list=[["O", "O", "O"], ["X", "X", 6], [7,8,9]]),"Winner is O")
 
     def test_two_inspectingRow(self):
-        self.assertEqual(ttt.inspectingRow(self, board_list=[[1, "O", "O"], ["X", "X", "X"], [7, 8, 9]]),"Winner is X")
+        self.assertEqual(ttt.inspecting_row(self, board_list=[[1, "O", "O"], ["X", "X", "X"], [7, 8, 9]]),"Winner is X")
 
     def test_inspectingCol(self):
-        self.assertEqual(ttt.inspectingCol(self,board_list=[[1,"O","X"],[3,"O","X"],[6,7,"X"]]),"Winner is X")
+        self.assertEqual(ttt.inspecting_col(self,board_list=[[1,"O","X"],[3,"O","X"],[6,7,"X"]]),"Winner is X")
 
     def test_two_inspectingCol(self):
-        self.assertEqual(ttt.inspectingCol(self,board_list=[["O","X",3],["O","X","X"],[7,"X","O"]]),"Winner is X")
+        self.assertEqual(ttt.inspecting_col(self,board_list=[["O","X",3],["O","X","X"],[7,"X","O"]]),"Winner is X")
 
     def test_inspectingDiag(self):
-        self.assertEqual(ttt.inspectingDiag(self,board_list=[["X","O","O"],["O","X",6],["O",8,"X"]]),"Winner is X")
+        self.assertEqual(ttt.inspecting_diag(self,board_list=[["X","O","O"],["O","X",6],["O",8,"X"]]),"Winner is X")
 
     def test_two_inspectingDiag(self):
-        self.assertEqual(ttt.inspectingDiag(self,board_list=[["O","X","X"], [4,"O",6], [7, 8, "O"]]),"Winner is O")
+        self.assertEqual(ttt.inspecting_diag(self,board_list=[["O","X","X"], [4,"O",6], [7, 8, "O"]]),"Winner is O")
 
     def test_inspectingReversDiag(self):
-        self.assertEqual(ttt.inspectingReversDiag(self,board_list=[[1,2,"O"],[4,"O",6],["O",7,8]]),"Winner is O")
+        self.assertEqual(ttt.inspecting_revers_diag(self,board_list=[[1,2,"O"],[4,"O",6],["O",7,8]]),"Winner is O")
 
     def test_draw_case(self):
-        self.assertEqual(ttt.inspectingReversDiag(self,board_list=[["O","X","O"],["X","O","O"],["X","O","X"]]),"There is no result yet")
+        self.assertEqual(ttt.inspecting_revers_diag(self,board_list=[["O","X","O"],["X","O","O"],["X","O","X"]]),"There is no result yet")
 
     def test_check_for_board_game_on_False(self):
         self.assertFalse(ttt.check_for_board_game_on(self,"Winner is X" , "There is no result yet" , "There is no result yet" , "There is no result yet" ))

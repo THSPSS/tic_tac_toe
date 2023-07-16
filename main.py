@@ -38,7 +38,7 @@ def play_tic_tac_toe():
     while input_not_validated :
 
         # Validate player_one input
-        validate_result = tictactoe.validateInput(player_one_input=user_input)
+        validate_result = tictactoe.validate_input(player_one_input=user_input)
 
         if validate_result is not None and not validate_result:
             print("Invalidate input.\n")
@@ -73,7 +73,7 @@ def play_tic_tac_toe():
         if not checkUserInput :
             player_input = input("Please enter a number")
 
-        player_input = tictactoe.playerInput(player_inputs = player_input)
+        player_input = tictactoe.player_input(player_inputs = player_input)
 
         checkBoard = tictactoe.check_whole_board(board=board , row=int(player_input[0]) ,column=int(player_input[1]))
 
@@ -82,16 +82,16 @@ def play_tic_tac_toe():
 
         print(checkBoard)
 
-        board = tictactoe.insertingBoard(board_list=board, player_side=player_side , input = player_input)
+        board = tictactoe.inserting_board(board_list=board, player_side=player_side , input = player_input)
         display_board = tictactoe.display_board_after_insert(board_list=board)
 
         print(display_board)
 
         if turn_count >= 5 and turn_count < 9:
-            result = tictactoe.inspectingRow(board_list=board)
-            resultCol = tictactoe.inspectingCol(board_list=board)
-            resultDiag = tictactoe.inspectingDiag(board_list=board)
-            resultRevDiag = tictactoe.inspectingReversDiag(board_list=board)
+            result = tictactoe.inspecting_row(board_list=board)
+            resultCol = tictactoe.inspecting_col(board_list=board)
+            resultDiag = tictactoe.inspecting_diag(board_list=board)
+            resultRevDiag = tictactoe.inspecting_revers_diag(board_list=board)
             #if result has no winner or draw than game is on loop
             board_game_is_on = tictactoe.check_for_board_game_on(result , resultCol , resultDiag , resultRevDiag)
 
@@ -101,10 +101,10 @@ def play_tic_tac_toe():
             print(resultRevDiag)
 
         if turn_count == 9:
-            result = tictactoe.inspectingRow(board_list=board)
-            resultCol = tictactoe.inspectingCol(board_list=board)
-            resultDiag = tictactoe.inspectingDiag(board_list=board)
-            resultRevDiag = tictactoe.inspectingReversDiag(board_list=board)
+            result = tictactoe.inspecting_row(board_list=board)
+            resultCol = tictactoe.inspecting_col(board_list=board)
+            resultDiag = tictactoe.inspecting_diag(board_list=board)
+            resultRevDiag = tictactoe.inspecting_revers_diag(board_list=board)
 
             if result == "There is no result yet":
                 board_game_is_on = False
