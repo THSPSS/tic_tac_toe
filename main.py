@@ -107,18 +107,16 @@ def play_tic_tac_toe():
             resultRevDiag = tictactoe.inspecting_revers_diag(board_list=board)
 
             if result == "There is no result yet":
-                board_game_is_on = False
                 print("It is draw!")
             if resultCol == "There is no result yet":
-                board_game_is_on = False
                 print("It is draw!")
             if resultDiag == "There is no result yet":
-                board_game_is_on = False
                 print("It is draw!")
             # check reverse Diagnol
             if resultRevDiag == "There is no result yet":
-                board_game_is_on = False
                 print("It is draw!")
+            # becuase there is no space left , board game sequence is false
+            board_game_is_on = False
 
             print(result)
             print("Game over!")
