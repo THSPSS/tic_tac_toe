@@ -89,36 +89,35 @@ def play_tic_tac_toe():
 
         if turn_count >= 5 and turn_count < 9:
             result = tictactoe.inspecting_row(board_list=board)
-            resultCol = tictactoe.inspecting_col(board_list=board)
-            resultDiag = tictactoe.inspecting_diag(board_list=board)
-            resultRevDiag = tictactoe.inspecting_revers_diag(board_list=board)
+            result_col = tictactoe.inspecting_col(board_list=board)
+            result_diag = tictactoe.inspecting_diag(board_list=board)
+            result_rev_diag = tictactoe.inspecting_revers_diag(board_list=board)
             #if result has no winner or draw than game is on loop
-            board_game_is_on = tictactoe.check_for_board_game_on(result , resultCol , resultDiag , resultRevDiag)
+            board_game_is_on = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
 
             print(result)
-            print(resultCol)
-            print(resultDiag)
-            print(resultRevDiag)
+            print(result_col)
+            print(result_diag)
+            print(result_rev_diag)
 
         if turn_count == 9:
             result = tictactoe.inspecting_row(board_list=board)
-            resultCol = tictactoe.inspecting_col(board_list=board)
-            resultDiag = tictactoe.inspecting_diag(board_list=board)
-            resultRevDiag = tictactoe.inspecting_revers_diag(board_list=board)
+            result_col = tictactoe.inspecting_col(board_list=board)
+            result_diag = tictactoe.inspecting_diag(board_list=board)
+            result_rev_diag = tictactoe.inspecting_revers_diag(board_list=board)
 
-            if result == "There is no result yet":
+            is_it_end = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
+
+            if is_it_end :
                 print("It is draw!")
-            if resultCol == "There is no result yet":
-                print("It is draw!")
-            if resultDiag == "There is no result yet":
-                print("It is draw!")
-            # check reverse Diagnol
-            if resultRevDiag == "There is no result yet":
-                print("It is draw!")
+            print(result)
+            print(result_col)
+            print(result_diag)
+            print(result_rev_diag)
+
             # becuase there is no space left , board game sequence is false
             board_game_is_on = False
 
-            print(result)
             print("Game over!")
             is_replay = input("Do you want to quit this game?")
 
