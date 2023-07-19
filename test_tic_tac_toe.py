@@ -184,7 +184,7 @@ class TestTicTacToe(unittest.TestCase):
         return result
 
     def test_check_for_win_result(self):
-        self.assertEqual(ttt.check_for_Win(self,board=[["O","X",3],["X","X","O"],["O","X",9]]),
+        self.assertEqual(ttt.check_for_win(self,board=[["O","X",3],["X","X","O"],["O","X",9]]),
                          ("There is no result yet",
                           "Winner is X",
                           "There is no result yet",

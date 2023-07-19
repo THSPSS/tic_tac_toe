@@ -88,11 +88,7 @@ def play_tic_tac_toe():
         print(display_board)
 
         if turn_count >= 5 and turn_count < 9:
-            result = tictactoe.inspecting_row(board_list=board)
-            result_col = tictactoe.inspecting_col(board_list=board)
-            result_diag = tictactoe.inspecting_diag(board_list=board)
-            result_rev_diag = tictactoe.inspecting_revers_diag(board_list=board)
-            #if result has no winner or draw than game is on loop
+            result , result_col , result_diag , result_rev_diag = tictactoe.check_for_win(board=board)
             board_game_is_on = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
 
             print(result)
@@ -100,29 +96,24 @@ def play_tic_tac_toe():
             print(result_diag)
             print(result_rev_diag)
 
-        if turn_count == 9:
-            result = tictactoe.inspecting_row(board_list=board)
-            result_col = tictactoe.inspecting_col(board_list=board)
-            result_diag = tictactoe.inspecting_diag(board_list=board)
-            result_rev_diag = tictactoe.inspecting_revers_diag(board_list=board)
+        result, result_col, result_diag, result_rev_diag = tictactoe.check_for_win(board=board)
+        is_it_end = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
 
-            is_it_end = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
+        if is_it_end :
+            print("It is draw!")
+        print(result)
+        print(result_col)
+        print(result_diag)
+        print(result_rev_diag)
 
-            if is_it_end :
-                print("It is draw!")
-            print(result)
-            print(result_col)
-            print(result_diag)
-            print(result_rev_diag)
+        # becuase there is no space left , board game sequence is false
+        board_game_is_on = False
 
-            # becuase there is no space left , board game sequence is false
-            board_game_is_on = False
+        print("Game over!")
+        is_replay = input("Do you want to quit this game?")
 
-            print("Game over!")
-            is_replay = input("Do you want to quit this game?")
-
-            if is_replay.upper() == 'Y':
-                replay_on = False
+        if is_replay.upper() == 'Y':
+            replay_on = False
 
         #check if there are bingo
         #inspecting board

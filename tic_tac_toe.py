@@ -199,7 +199,7 @@ class TicTacToe:
 
         return result
 
-    def check_for_Win(self,board):
+    def check_for_win(self,board):
         result_for_checking = ""
         result = self.inspecting_row(board_list=board)
         resultCol = self.inspecting_col(board_list=board)
