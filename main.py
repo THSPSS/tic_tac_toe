@@ -89,18 +89,25 @@ def play_tic_tac_toe():
 
         if turn_count >= 5 and turn_count < 9:
             result , result_col , result_diag , result_rev_diag = tictactoe.check_for_win(board=board)
-            board_game_is_on = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
 
             print(result)
             print(result_col)
             print(result_diag)
             print(result_rev_diag)
 
+
+            board_game_is_on = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
+
+
+
+
         result, result_col, result_diag, result_rev_diag = tictactoe.check_for_win(board=board)
         is_it_end = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
 
         if is_it_end :
             print("It is draw!")
+
+
         print(result)
         print(result_col)
         print(result_diag)
