@@ -100,27 +100,27 @@ def play_tic_tac_toe():
 
 
 
+        if turn_count == 9 :
+            result, result_col, result_diag, result_rev_diag = tictactoe.check_for_win(board=board)
+            is_it_end = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
 
-        result, result_col, result_diag, result_rev_diag = tictactoe.check_for_win(board=board)
-        is_it_end = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
-
-        if is_it_end :
-            print("It is draw!")
+            if is_it_end :
+                print("It is draw!")
 
 
-        print(result)
-        print(result_col)
-        print(result_diag)
-        print(result_rev_diag)
+            print(result)
+            print(result_col)
+            print(result_diag)
+            print(result_rev_diag)
 
-        # becuase there is no space left , board game sequence is false
-        board_game_is_on = False
+            # becuase there is no space left , board game sequence is false
+            board_game_is_on = False
 
-        print("Game over!")
-        is_replay = input("Do you want to quit this game?")
+            print("Game over!")
+            is_replay = input("Do you want to quit this game?")
 
-        if is_replay.upper() == 'Y':
-            replay_on = False
+            if is_replay.upper() == 'Y':
+                replay_on = False
 
         #check if there are bingo
         #inspecting board
