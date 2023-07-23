@@ -105,6 +105,7 @@ def play_tic_tac_toe():
 
             is_replay = input("Do you want to quit this game?")
 
+            # if user choose to quit game then replay on is become False and it ended game completetly
             if is_replay.upper() == 'Y':
                 replay_on = False
 
