@@ -98,6 +98,15 @@ def play_tic_tac_toe():
 
             board_game_is_on = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
 
+            #board_game_is_on is false than ended game here
+
+            if not board_game_is_on:
+                print("Game over!")
+
+            is_replay = input("Do you want to quit this game?")
+
+            if is_replay.upper() == 'Y':
+                replay_on = False
 
 
         if turn_count == 9 :

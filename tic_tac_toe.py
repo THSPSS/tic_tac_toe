@@ -5,6 +5,9 @@ This class is for creating TicTacToe game
 it has functions that related to convey TicTacToe game
 
 
+with Minmax Algorithm
+
+
 """
 
 
