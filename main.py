@@ -116,7 +116,12 @@ def play_tic_tac_toe():
 
             if is_it_end :
                 print("It is draw!")
+                print("Game over!")
+                is_replay = input("Do you want to quit this game?")
 
+                if is_replay.upper() == 'Y':
+                    replay_on = False
+                    board_game_is_on = False
 
             print(result)
             print(result_col)
@@ -124,13 +129,11 @@ def play_tic_tac_toe():
             print(result_rev_diag)
 
             # becuase there is no space left , board game sequence is false
-            board_game_is_on = False
 
-            print("Game over!")
-            is_replay = input("Do you want to quit this game?")
 
-            if is_replay.upper() == 'Y':
-                replay_on = False
+
+
+
 
         #check if there are bingo
         #inspecting board
