@@ -3,14 +3,8 @@ from tic_tac_toe import TicTacToe
 def play_tic_tac_toe():
     tictactoe = TicTacToe()
 
-    #setting game
-    board_game_is_on = False
-    player_one = None
     board_num = 3
-
-    #after making board board_game_is_on set True
     board_game_is_on = True
-
 
     #Initialize input_not_validated variable
     input_not_validated = True
@@ -103,11 +97,11 @@ def play_tic_tac_toe():
             if not board_game_is_on:
                 print("Game over!")
 
-            is_replay = input("Do you want to quit this game?")
+                is_replay = input("Do you want to quit this game?")
 
             # if user choose to quit game then replay on is become False and it ended game completetly
-            if is_replay.upper() == 'Y':
-                replay_on = False
+                if is_replay.upper() == 'Y':
+                    replay_on = False
 
 
         if turn_count == 9 :
