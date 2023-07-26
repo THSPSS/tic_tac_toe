@@ -194,8 +194,13 @@ class TestTicTacToe(unittest.TestCase):
     def test_check_for_board_game_on_False(self):
         self.assertFalse(ttt.check_for_board_game_on(self,"Winner is X" , "There is no result yet" , "There is no result yet" , "There is no result yet" ))
 
+    def test_check_for_board_game_on_False(self):
+        self.assertFalse(ttt.check_for_board_game_on(self,"There is no result yet" , "There is no result yet" , "There is no result yet", "Winner is O"))
+
     def test_check_for_board_game_on_True(self):
         self.assertTrue(ttt.check_for_board_game_on(self,"There is no result yet" , "There is no result yet" , "There is no result yet", "There is no result yet"))
+
+
 
 
 
