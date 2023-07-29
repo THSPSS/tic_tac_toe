@@ -59,13 +59,13 @@ def play_tic_tac_toe():
         #board printing
         print(board)
 
-        #change number to start with 1 not 0
-        player_input = input("Please enter your choice from 1 to 9 : ")
-
-        checkUserInput = tictactoe.validate_user_input(player_input=player_input)
-
-        if not checkUserInput :
-            player_input = input("Please enter a number")
+        while True:
+            #change number to start with 1 not 0
+            player_input = input("Please enter your choice from 1 to 9 : ")
+            if tictactoe.validate_user_input(player_input=player_input):
+                break
+            else:
+                print("Invalid input , please try again")
 
         player_input = tictactoe.player_input(player_inputs = player_input)
 

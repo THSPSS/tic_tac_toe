@@ -83,7 +83,7 @@ class TicTacToe:
                 return False
 
         except ValueError:
-            return "please enter number"
+            return False
 
 
 
@@ -97,7 +97,6 @@ class TicTacToe:
 
 
     def player_input(self, player_inputs):
-        userInput = ""
         user_hash = {
             "1": (0, 0),
             "2": (0, 1),
