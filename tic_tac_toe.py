@@ -202,7 +202,6 @@ class TicTacToe:
         return result
 
     def check_for_win(self,board):
-        result_for_checking = ""
         result = self.inspecting_row(board_list=board)
         resultCol = self.inspecting_col(board_list=board)
         resultDiag = self.inspecting_diag(board_list=board)
@@ -210,11 +209,19 @@ class TicTacToe:
 
         return result , resultCol , resultDiag , resultRevDiag
 
-    def check_for_board_game_on(self, row_result, col_result, result_diag, result_rev_diag):
-        if row_result or col_result or result_diag or result_rev_diag != "There is no result yet":
-            return False
+    # def check_for_board_game_on(self, row_result, col_result, result_diag, result_rev_diag):
+    #     if row_result != "There is no result yet" \
+    #             or col_result != "There is no result yet" \
+    #             or result_diag != "There is no result yet"\
+    #             or result_rev_diag != "There is no result yet":
+    #         return False
+    #
+    #     return True
 
-        return True
+    def check_for_board_game_on(self, row_result, col_result, result_diag, result_rev_diag):
+        results = [row_result, col_result, result_diag, result_rev_diag]
+        return not any(result != "There is no result yet" for result in results)
+
 
 
 
