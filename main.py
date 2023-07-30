@@ -81,6 +81,7 @@ def play_tic_tac_toe():
 
         print(display_board)
 
+        # check if turn count is over five and under nine than check
         if turn_count >= 5 and turn_count < 9:
             result , result_col , result_diag , result_rev_diag = tictactoe.check_for_win(board=board)
 

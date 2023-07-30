@@ -69,8 +69,8 @@ class TestTicTacToe(unittest.TestCase):
     def test_validate_user_input_True(self):
         self.assertTrue(ttt.validate_user_input(self,player_input="1"))
 
-    def test_validate_user_input_True(self):
-        self.assertEqual(ttt.validate_user_input(self,player_input="d"),"please enter number")
+    def test_validate_user_input_False(self):
+        self.assertFalse(ttt.validate_user_input(self,player_input="d"))
 
     #test display board
     def test_display_board(self):
