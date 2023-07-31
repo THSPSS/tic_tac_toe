@@ -82,51 +82,23 @@ def play_tic_tac_toe():
         print(display_board)
 
         # check if turn count is over five and under nine then check
-        if turn_count >= 5 and turn_count < 9:
+        if turn_count >= 5:
             result , result_col , result_diag , result_rev_diag = tictactoe.check_for_win(board=board)
+            board_game_is_on = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
+
 
             print(result)
             print(result_col)
             print(result_diag)
             print(result_rev_diag)
 
-
-            board_game_is_on = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
-
-            #board_game_is_on is false than ended game here
-
-            if not board_game_is_on:
-                print("Game over!")
-
-                is_replay = input("Do you want to quit this game?")
-
-            # if user choose to quit game then replay on is become False and it ended game completetly
-                if is_replay.upper() == 'Y':
-                    replay_on = False
-
-
-        if turn_count == 9 :
-            result, result_col, result_diag, result_rev_diag = tictactoe.check_for_win(board=board)
-            is_it_end = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
-
-            if is_it_end :
-                print("It is draw!")
+            if not board_game_is_on :
                 print("Game over!")
                 is_replay = input("Do you want to quit this game?")
 
                 if is_replay.upper() == 'Y':
                     replay_on = False
                     board_game_is_on = False
-
-            print(result)
-            print(result_col)
-            print(result_diag)
-            print(result_rev_diag)
-
-            # becuase there is no space left , board game sequence is false
-
-
-
 
 
 
