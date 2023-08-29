@@ -36,7 +36,7 @@ class TicTacToe:
 
         return board_list
 
-    def check_whole_board(self, board, row, column):
+    def check_whole_board(self, board: object, row: object, column: object) -> object:
         if board[row][column] not in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
             # return False which is board is not empty
             return False

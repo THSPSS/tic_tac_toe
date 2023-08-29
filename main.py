@@ -69,12 +69,12 @@ def play_tic_tac_toe():
 
         player_input = tictactoe.player_input(player_inputs = player_input)
 
-        checkBoard = tictactoe.check_whole_board(board=board , row=int(player_input[0]) ,column=int(player_input[1]))
+        check_the_board = tictactoe.check_whole_board(board=board , row=int(player_input[0]) ,column=int(player_input[1]))
 
-        if not checkBoard :
+        if not check_the_board :
             player_input = input("that place already be chosen. Please choose empty space : ")
 
-        print(checkBoard)
+        print(check_the_board)
 
         board = tictactoe.inserting_board(board_list=board, player_side=player_side , input = player_input)
         display_board = tictactoe.display_board_after_insert(board_list=board)
@@ -109,7 +109,8 @@ def play_tic_tac_toe():
 
 
 
-
-play_tic_tac_toe()
+# Game loop for a single game of Tic Tac Toe
+while True:
+    play_tic_tac_toe()
 
 
