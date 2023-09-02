@@ -101,6 +101,7 @@ def play_tic_tac_toe():
 
         #check if there are bingo
         #inspecting board
+        #showing result about the scores
 
         turn_count += 1
 
