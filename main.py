@@ -94,8 +94,7 @@ def play_tic_tac_toe():
                 is_replay = input("Do you want to quit this game?")
 
                 if is_replay.upper() == 'Y':
-                    replay_on = False
-                    board_game_is_on = False
+                    break
 
 
 
