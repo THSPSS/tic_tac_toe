@@ -44,7 +44,7 @@ class TicTacToe:
             for item in row:
                 if item in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
                     return False
-                return True
+        return True
 
     def check_the_space(self, board: object , row: int , column: int) -> object:
         if board[row][column] not in [1, 2, 3, 4, 5, 6, 7, 8, 9]:

@@ -41,9 +41,6 @@ def play_tic_tac_toe():
     turn_count = 1
     while True:
 
-        # couting the number to find which user playing
-
-
         # checking user_position with turn_count
         if turn_count % 2 != 0:
             player_side = player_one
