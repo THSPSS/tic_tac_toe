@@ -16,7 +16,7 @@ class TestTicTacToe(unittest.TestCase):
 
 
     def test_making_a_new_board(self):
-        self.assertEqual(ttt.making_a_new_Board(self,board_num=3), [[1,2,3],[4,5,6],[7,8,9]])
+        self.assertEqual(ttt.making_a_new_board(self,board_num=3), [[1,2,3],[4,5,6],[7,8,9]])
 
 
     # def test_checking_user_input_length(self):
@@ -133,82 +133,13 @@ class TestTicTacToe(unittest.TestCase):
     def test_draw_case(self):
         self.assertEqual(ttt.inspecting_revers_diag(self,board_list=[["O","X","O"],["X","O","O"],["X","O","X"]]),"There is no result yet")
 
-    def inspecting_row(self,board_list):
-        result = "There is no result yet"
-
-        for i in range(len(board_list)):
-            count_x = 0
-            count_o = 0
-            for j in range(len(board_list)):
-                if board_list[i][j] == "X" :
-                    count_x += 1
-                elif board_list[i][j] == "O" :
-                    count_o += 1
-            if count_o == 3:
-                return "Winner is O"
-            elif count_x == 3:
-                return "Winner is X"
-
-        return result
-    def inspecting_col(self , board_list):
-        result = "There is no result yet"
-
-        for i in range(len(board_list)):
-            count_x = 0
-            count_o = 0
-            for j in range(len(board_list)):
-                if board_list[j][i] == "X" :
-                    count_x += 1
-                elif board_list[j][i] == "O":
-                    count_o += 1
-            if count_o == 3:
-                return "Winner is O"
-            elif count_x == 3:
-                return "Winner is X"
-
-        return result
-
-    def inspecting_diag(self , board_list):
-        result = "There is no result yet"
-        count_x = 0
-        count_o = 0
-        for i in range(len(board_list)):
-            if board_list[i][i] == "X":
-                count_x += 1
-            elif board_list[i][i] == "O":
-                count_o += 1
-        if count_o == 3:
-            return "Winner is O"
-        elif count_x == 3:
-            return "Winner is X"
-
-        return result
-
-    def inspecting_revers_diag(self, board_list):
-        result = "There is no result yet"
-        count_x = 0
-        count_o = 0
-
-        for i in range(len(board_list)-1 , -1, -1):
-            if board_list[(len(board_list)-1)-i][i] == "X":
-                count_x += 1
-            elif board_list[(len(board_list)-1)-i][i] == "O":
-                count_o += 1
-
-        if count_o == 3:
-            return "Winner is O"
-        elif count_x == 3:
-            return "Winner is X"
-
-        return result
-
-    def test_check_for_win_result(self):
-        self.assertEqual(ttt.check_for_win(self,board=[["O","X",3],["X","X","O"],["O","X",9]]),
-                         ("There is no result yet",
-                          "Winner is X",
-                          "There is no result yet",
-                          "There is no result yet",
-                          ))
+    # def test_check_for_win_result(self):
+    #     self.assertEqual(ttt.check_for_win(self,board=[["O","X",3],["X","X","O"],["O","X",9]]),
+    #                      ("There is no result yet",
+    #                       "Winner is X",
+    #                       "There is no result yet",
+    #                       "There is no result yet",
+    #                       ))
 
     def test_check_for_board_game_on_False(self):
         self.assertFalse(ttt.check_for_board_game_on(self,"Winner is X" , "There is no result yet" , "There is no result yet" , "There is no result yet" ))
@@ -224,6 +155,14 @@ class TestTicTacToe(unittest.TestCase):
         self.assertTrue(ttt.check_for_board_game_on(self,"There is no result yet" , "There is no result yet" , "There is no result yet", "There is no result yet"))
 
 
+    def check_for_result(self):
+        self.assertTrue(ttt.check_for_result(self , board_list=[["O","X",3],["X","X","O"],["O","X",9]],cur_player="X"))
 
+    def check_for_result(self):
+        self.assertFalse(ttt.check_for_result(self , board_list=[["O","X",3],["X","X","O"],["O","X",9]] ,cur_player="O"))
 
+    def check_for_result(self):
+        self.assertTrue(ttt.check_for_result(self , board_list=[[1,"O","X"],[3,"O","X"],[6,7,"X"]],cur_player="X"))
 
+    def check_for_result(self):
+        self.assertFalse(ttt.check_for_result(self , board_list=[[1,"O","X"],[3,"O","X"],[6,7,"X"]],cur_player="O"))

@@ -13,6 +13,9 @@ with Minmax Algorithm
 
 class TicTacToe:
 
+    def __init__(self):
+        self.board = []
+
 
 
     def set_other_player(self, first_player_input):
@@ -25,7 +28,7 @@ class TicTacToe:
     # 3 * 3 board
     # [[1 , '' , '', ] ,[1 , '' , '', ],[1 , '' , '', ]]
     # because it multiply same row , when it is called as [0][0] , other row is also called out
-    def making_a_new_Board(self, board_num):
+    def making_a_new_board(self, board_num):
         row, col = board_num, board_num
         board_list = [[""] * col for _ in range(row)]
         count = 1
@@ -36,7 +39,14 @@ class TicTacToe:
 
         return board_list
 
-    def check_whole_board(self, board: object, row: object, column: object) -> object:
+    def check_whole_board(self, board: object) -> object:
+        for row in board:
+            for item in row:
+                if item in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
+                    return False
+                return True
+
+    def check_the_space(self, board: object , row: int , column: int) -> object:
         if board[row][column] not in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
             # return False which is board is not empty
             return False
@@ -129,6 +139,60 @@ class TicTacToe:
         updated_board[input[0]][input[1]] = player_side
 
         return updated_board
+
+
+    def check_for_result(self, board_list: object, cur_player: object) -> object:
+
+        n = len(board_list)
+
+        #inspecitng rows
+        for i in range(n):
+            result = True
+            for j in range(n):
+                if board_list[i][j] != cur_player:
+                    result = False
+                    break
+
+            if result:
+                return result
+
+
+        #inspecting columns
+        for i in range(n):
+            result = True
+            for j in range(n):
+                if board_list[j][i] != cur_player:
+                    result = False
+                    break
+            if result:
+                return result
+
+
+        #inspecting diagnols
+        result = True
+        for i in range(n):
+            if board_list[i][i] != cur_player:
+                result = False
+                break
+        if result:
+            return result
+
+        result = True
+        for i in range(n):
+            if board_list[i][n-1-i] != cur_player:
+                result = False
+                break
+        if result:
+            return result
+        return False
+
+        # for row in board_list:
+        #     for item in row:
+        #         if int(item) in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
+        #             return False
+        # return True
+
+
 
     def inspecting_row(self,board_list):
         result = "There is no result yet"

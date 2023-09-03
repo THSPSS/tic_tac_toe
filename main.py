@@ -4,23 +4,17 @@ def play_tic_tac_toe():
     tictactoe = TicTacToe()
 
     board_num = 3
-    board_game_is_on = True
+    #board_game_is_on = True
 
     #Initialize input_not_validated variable
     input_not_validated = True
 
-
-
     #making board
-    board = tictactoe.making_a_new_Board(board_num=board_num)
+    board = tictactoe.making_a_new_board(board_num=board_num)
     display_board = tictactoe.display_board(board_range=board_num , board_list=board)
-
-
 
     # Get user input
     user_input = input("Please enter first player's position. O or X ? : ")
-
-
 
     #display board to users
     print(display_board)
@@ -41,10 +35,11 @@ def play_tic_tac_toe():
     player_one = validate_result
     player_two = tictactoe.set_other_player(first_player_input=player_one)
     print(f"first player : {player_one} \nother player: {player_two}")
+
     #board printing
     print(board)
     turn_count = 1
-    while board_game_is_on:
+    while True:
 
         # couting the number to find which user playing
 
@@ -66,7 +61,7 @@ def play_tic_tac_toe():
 
         player_input = tictactoe.player_input(player_inputs = player_input)
 
-        check_the_board = tictactoe.check_whole_board(board=board , row=int(player_input[0]) ,column=int(player_input[1]))
+        check_the_board = tictactoe.check_the_space(board=board , row=int(player_input[0]) ,column=int(player_input[1]))
 
         if not check_the_board :
             player_input = input("that place already be chosen. Please choose empty space : ")
@@ -78,25 +73,23 @@ def play_tic_tac_toe():
 
         print(display_board)
 
-        # check if turn count is over five and under nine then check
-        if turn_count >= 5:
-            result , result_col , result_diag , result_rev_diag = tictactoe.check_for_win(board=board)
-            board_game_is_on = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
+        # result , result_col , result_diag , result_rev_diag = tictactoe.check_for_win(board=board)
+        # board_game_is_on = tictactoe.check_for_board_game_on(result , result_col , result_diag , result_rev_diag)
+        #
+        #
+        # print(result)
+        # print(result_col)
+        # print(result_diag)
+        # print(result_rev_diag)
+        check_result = tictactoe.check_for_result(board_list=board , cur_player= player_side)
+        if check_result :
+            print(f"Player {player_side} win")
+            break
 
-
-            print(result)
-            print(result_col)
-            print(result_diag)
-            print(result_rev_diag)
-
-            if not board_game_is_on :
-                print("Game over!")
-                is_replay = input("Do you want to quit this game?")
-
-                if is_replay.upper() == 'Y':
-                    break
-
-
+        check_draw = tictactoe.check_whole_board(board=board)
+        if check_draw:
+            print("It is a Draw")
+            break
 
         #check if there are bingo
         #inspecting board
@@ -105,11 +98,7 @@ def play_tic_tac_toe():
         turn_count += 1
 
 
-#Replay TicTacToe game
-replay_on = True
 
-# Game loop for a single game of Tic Tac Toe
-while replay_on:
-    play_tic_tac_toe()
+play_tic_tac_toe()
 
 
